@@ -8,7 +8,8 @@
 				<transition name="fade" appear>
 					<div v-show="showContent" class="w-menu__content">
 						<div class="w-menu__header-logo">
-							<img src="@local-assets/img/logo-horizontal.svg" alt aria-hidden="true" />
+							<!-- <img src="@local-assets/img/logo-horizontal.svg" alt aria-hidden="true" /> -->
+							<c-icon src="@icons/hands" class="w-menu__icon-logo" />
 						</div>
 						<h1 v-if="title" class="w-menu__header-title text-xl-medium" tabindex="-1">
 							{{ $t('MENU.HELLO', { name: title }) }}
@@ -146,6 +147,11 @@ export default {
 	right: 0;
 	bottom: 0;
 	z-index: $layer-modal-z-index;
+}
+
+.w-menu__icon-logo {
+	width: 50px;
+	color: white;
 }
 
 .w-menu.--is-desktop {

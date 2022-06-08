@@ -28,7 +28,6 @@ const aliases = {
 	'@widgets': 'src/widgets',
 	'@locales': 'src/locales',
 	'@skyline': 'src/projects/skyline',
-	'@assisted': 'src/projects/assisted-channels',
 };
 
 const templateLocale = (p, d) => `src/projects/${p}/${d}`;

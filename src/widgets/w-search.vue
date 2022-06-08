@@ -106,7 +106,7 @@
 </template>
 
 <script>
-import moduleAgent from '@assisted/store/modules/agent/m-agent';
+// import moduleAgent from '@assisted/store/modules/agent/m-agent';
 import CTextField from '@components/c-text-field';
 import CTextFieldIcon from '@components/c-text-field-icon';
 import CIcon from '@components/c-icon';
@@ -115,9 +115,9 @@ import CPagination from '@components/c-pagination';
 export default {
 	name: 'w-search',
 
-	modules: {
-		agent: moduleAgent,
-	},
+	// modules: {
+	// 	agent: moduleAgent,
+	// },
 
 	components: {
 		CTextField,

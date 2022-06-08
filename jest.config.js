@@ -36,7 +36,6 @@ module.exports = {
 		'src/views/*.{js,vue}',
 		'src/widgets/**/*.{js,vue}',
 		'src/projects/skyline/app.{js,vue}',
-		'src/projects/assisted-channels/store/modules/**/*.{js,vue}',
 		'src/projects/skyline/store/modules/**/*.{js,vue}',
 		'src/plugins/i18nExtended/*.{js,vue}',
 		'!src/services/*.{js,vue}',
