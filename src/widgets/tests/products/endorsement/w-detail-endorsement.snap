@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`w-detail-endorsement.vue renders correctly 1`] = `
+<div class="w-detail-endorsement">
+  <div class="w-detail-endorsement__group">
+    <!---->
+  </div>
+  <div class="w-detail-endorsement__group">
+    <div class="c-list-icon-item">
+      <div class="c-list-icon-item__col1">
+        <c-icon-stub size="xs" src="@icons/paper"></c-icon-stub>
+      </div>
+      <dl class="c-list-icon-item__col2">
+        <dt class="c-list-icon-item__title text-m-medium">Número de aval</dt>
+        <dd class="c-list-icon-item__description text-m-light">
+          <span>
+            1234567890
+          </span>
+          <div class="c-button-copy-to-clipboard" copytext="1234567890" copytitle="Número de aval"></div>
+        </dd>
+      </dl>
+    </div>
+    <div class="c-list-icon-item">
+      <div class="c-list-icon-item__col1">
+        <c-icon-stub size="xs" src="@icons/paper"></c-icon-stub>
+      </div>
+      <dl class="c-list-icon-item__col2">
+        <dt class="c-list-icon-item__title text-m-medium">Cuenta del aval</dt>
+        <dd class="c-list-icon-item__description text-m-light">
+          <span>
+            000199015739988
+          </span>
+          <!---->
+        </dd>
+      </dl>
+    </div>
+    <div class="c-list-icon-item">
+      <div class="c-list-icon-item__col1">
+        <c-icon-stub size="xs" src="@icons/paper"></c-icon-stub>
+      </div>
+      <dl class="c-list-icon-item__col2">
+        <dt class="c-list-icon-item__title text-m-medium">Cuenta asociada</dt>
+        <dd class="c-list-icon-item__description text-m-light">
+          <span>
+            ES4002340001012400069080
+          </span>
+          <!---->
+        </dd>
+      </dl>
+    </div>
+  </div>
+  <div class="w-detail-endorsement__group">
+    <div class="c-list-icon-item">
+      <div class="c-list-icon-item__col1">
+        <c-icon-stub size="xs" src="@icons/calendarArrow"></c-icon-stub>
+      </div>
+      <dl class="c-list-icon-item__col2">
+        <dt class="c-list-icon-item__title text-m-medium">Fecha de apertura</dt>
+        <dd class="c-list-icon-item__description text-m-light">
+          <span>
+            12/1/2006
+          </span>
+          <!---->
+        </dd>
+      </dl>
+    </div>
+    <div class="c-list-icon-item">
+      <div class="c-list-icon-item__col1">
+        <c-icon-stub size="xs" src="@icons/calendarCross"></c-icon-stub>
+      </div>
+      <dl class="c-list-icon-item__col2">
+        <dt class="c-list-icon-item__title text-m-medium">Fecha de cancelación</dt>
+        <dd class="c-list-icon-item__description text-m-light">
+          <span>
+            1/12/2021
+          </span>
+          <!---->
+        </dd>
+      </dl>
+    </div>
+    <div class="c-list-icon-item">
+      <div class="c-list-icon-item__col1">
+        <c-icon-stub size="xs" src="@icons/calendarCross"></c-icon-stub>
+      </div>
+      <dl class="c-list-icon-item__col2">
+        <dt class="c-list-icon-item__title text-m-medium">Fecha de vencimiento</dt>
+        <dd class="c-list-icon-item__description text-m-light">
+          <span>
+            31/12/9999
+          </span>
+          <!---->
+        </dd>
+      </dl>
+    </div>
+  </div>
+</div>
+`;

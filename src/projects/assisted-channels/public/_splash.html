@@ -1,0 +1,65 @@
+<style>
+	html,
+	body {
+		background: #101010;
+	}
+
+	#splash {
+		background: linear-gradient(45deg, #00b89c, #008571);
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 10;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: opacity 400ms ease-in;
+		will-change: opacity;
+		box-sizing: border-box;
+		contain: strict;
+	}
+
+	#splash.fadeout {
+		opacity: 0;
+	}
+
+	#splash.stop #logo {
+		animation: none;
+	}
+
+	#splash.disassemble #logo {
+		animation: splashFadeIn 300ms ease-out reverse forwards;
+	}
+
+	#logo {
+		position: relative;
+		width: 130px;
+		background: rgb(41, 40, 41);
+		border-radius: 50%;
+		padding: 10px;
+		fill: #ffffff;
+		box-sizing: border-box;
+	}
+
+	@keyframes splashFadeIn {
+		from {
+			opacity: 0;
+		}
+	}
+</style>
+
+<div id="splash">
+	<svg
+		id="logo"
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 511.999 511.999"
+		xmlns:v="https://vecta.io/nano"
+	>
+		<path
+			d="M438.1 273.32h-39.596c4.036 11.05 6.24 22.975 6.24 35.404v149.65a44.13 44.13 0 0 1-2.543 14.782h65.46c24.453 0 44.346-19.894 44.346-44.346v-81.58c.001-40.753-33.155-73.91-73.91-73.91zm-330.825 35.405c0-12.43 2.205-24.354 6.24-35.404H73.9c-40.754 0-73.9 33.156-73.9 73.9v81.58c0 24.452 19.893 44.346 44.346 44.346h65.462c-1.64-4.628-2.543-9.6-2.543-14.783v-149.65zm193.996-73.9H210.74c-40.754 0-73.9 33.156-73.9 73.9v149.65c0 8.163 6.618 14.782 14.782 14.782H360.39c8.164 0 14.782-6.618 14.782-14.782v-149.65c0-40.754-33.156-73.9-73.9-73.9zM256 38.84c-49.012 0-88.886 39.874-88.886 88.887 0 33.245 18.35 62.28 45.447 77.524 12.853 7.23 27.67 11.362 43.44 11.362s30.586-4.132 43.44-11.362c27.1-15.244 45.447-44.28 45.447-77.524 0-49.012-39.874-88.887-88.886-88.887zM99.918 121.69c-36.655 0-66.475 29.82-66.475 66.475s29.82 66.475 66.475 66.475c9.298 0 18.152-1.926 26.195-5.388 13.906-5.987 25.372-16.585 32.467-29.86a66.05 66.05 0 0 0 7.813-31.227c0-36.654-29.82-66.475-66.475-66.475zm312.164 0c-36.655 0-66.475 29.82-66.475 66.475 0 11.282 2.833 21.91 7.813 31.227 7.095 13.276 18.56 23.874 32.467 29.86 8.043 3.462 16.897 5.388 26.195 5.388 36.655 0 66.475-29.82 66.475-66.475s-29.82-66.475-66.475-66.475z"
+		/>
+	</svg>
+</div>

@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`w-detail-credit.vue renders correctly 1`] = `
+<div
+  class="w-detail-credit"
+>
+  <div
+    class="w-detail-credit__group"
+  >
+    <c-list-icon-item-stub
+      copyable="true"
+      description="123ABC"
+      icon="@icons/paper"
+      title="Número de crédito"
+    />
+     
+    <c-list-icon-item-stub
+      description="ES6968867819113534431785"
+      icon="@icons/paper"
+      title="Cuenta asociada"
+    />
+  </div>
+   
+  <div
+    class="w-detail-credit__group"
+  >
+    <w-interveners-stub
+      interveners="[object Object]"
+    />
+  </div>
+   
+  <div
+    class="w-detail-credit__group"
+  >
+    <c-list-icon-item-stub
+      description="11/12/2020"
+      icon="@icons/calendarArrow"
+      title="Fecha de inicio"
+    />
+     
+    <c-list-icon-item-stub
+      description="11/6/2020"
+      icon="@icons/calendarTime"
+      title="Fecha de revisión"
+    />
+     
+    <c-list-icon-item-stub
+      description="11/12/2021"
+      icon="@icons/calendarCross"
+      title="Fecha de vencimiento"
+    />
+     
+    <c-list-icon-item-stub
+      description="123,45 €"
+      icon="@icons/walletMoney"
+      title="Saldo dispuesto"
+    />
+     
+    <c-list-icon-item-stub
+      description="1,00%"
+      icon="@icons/profitability"
+      title="Tipo de interés acreedor"
+    />
+     
+    <c-list-icon-item-stub
+      description="6,00%"
+      icon="@icons/profitability"
+      title="Tipo de interés deudor"
+    />
+  </div>
+   
+  <div
+    class="w-detail-credit__group"
+    data-testid="profiles"
+  >
+    <c-list-icon-item-stub
+      actionable=""
+      class="w-detail-credit__profiles"
+      description="Sin perfil asignado"
+      icon="@icons/interveners"
+      title="Perfil"
+    >
+      <ul
+        class="w-detail-credit__profiles-list"
+      >
+        <li>
+          
+					Sin perfil asignado
+				
+        </li>
+      </ul>
+    </c-list-icon-item-stub>
+  </div>
+</div>
+`;

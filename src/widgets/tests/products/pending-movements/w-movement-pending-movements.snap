@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`w-movement-pending-movements.vue renders correctly 1`] = `
+<div
+  class="w-movement-pending-movements"
+  tabindex="0"
+>
+  <span
+    class="w-movement-pending-movements__title text-m-medium"
+  >
+    Traspaso en curso
+  </span>
+   
+  <span
+    class="w-movement-pending-movements__value text-l-medium"
+  >
+    
+		2.000,40 €
+	
+  </span>
+   
+  <span
+    class="w-movement-pending-movements__title text-m-medium"
+  >
+    
+		DPAM L BOND GOVER SUST HGED F
+	
+  </span>
+   
+  <span
+    class="w-movement-pending-movements__product-title text-s-light"
+  >
+    
+		2/1/2020
+	
+  </span>
+   
+  <span
+    class="w-movement-pending-movements__title text-m-medium"
+  >
+    
+		LU0336683767
+	
+  </span>
+   
+  <span
+    class="w-movement-pending-movements__stocks text-s-light"
+  />
+</div>
+`;

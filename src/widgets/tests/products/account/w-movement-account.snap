@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`w-movement-account.vue renders correctly 1`] = `
+<router-link-stub
+  ariacurrentvalue="page"
+  class="w-movement-account"
+  event="click"
+  tag="button"
+  to="[object Object]"
+>
+  <c-list-item-stub
+    amount="2.000,40 €"
+    balance="100.531,40 €"
+    comment=""
+    info="2/1/2020"
+    title="COMPRA"
+  />
+</router-link-stub>
+`;

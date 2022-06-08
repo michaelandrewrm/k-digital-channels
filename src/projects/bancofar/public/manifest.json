@@ -1,0 +1,19 @@
+{
+	"name": "Bancofar",
+	"short_name": "Bancofar",
+	"display": "standalone",
+	"orientation": "portrait",
+	"start_url": "/?utm_source=homescreen",
+	"theme_color": "#6bcdb2",
+	"background_color": "#ffffff",
+	"launch_path": "/",
+	"prefer_related_applications": false,
+	"icons": [
+		{
+			"src": "./icons/pwaIcon.png",
+			"type": "image/png",
+			"sizes": "640x640",
+			"purpose": "any maskable"
+		}
+	]
+}

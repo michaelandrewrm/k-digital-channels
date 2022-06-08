@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`v-communication-detail.vue renders a document correctly 1`] = `
+<l-page-stub
+  closable="true"
+>
+  <h1
+    tabindex="-1"
+  >
+    Documentos
+  </h1>
+   
+  <transition-stub
+    mode="out-in"
+    name="placeholder"
+  >
+    <div
+      class="v-communication-detail__page"
+    >
+      <div
+        class="v-communication-detail__title text-l-bold"
+      >
+        description
+      </div>
+       
+      <div
+        class="v-communication-detail__date text-s-book"
+      >
+        
+				7/11/2020
+			
+      </div>
+       
+      <div
+        class="v-communication-detail__text text-m-book"
+      >
+        
+      </div>
+       
+      <div
+        class="v-communication-detail__download"
+      >
+        <span
+          class="v-communication-detail__download-button text-l-book"
+          data-testid="view-document-button"
+        >
+          <c-icon-button-stub
+            class="v-communication-detail__download-button-icon"
+            icon="@icons/attachment"
+            raised="true"
+          />
+          
+					Descargar documento
+				
+        </span>
+      </div>
+    </div>
+  </transition-stub>
+</l-page-stub>
+`;
+
+exports[`v-communication-detail.vue renders an alert correctly 1`] = `
+<l-page-stub
+  closable="true"
+>
+  <h1
+    tabindex="-1"
+  >
+    Avisos
+  </h1>
+   
+  <transition-stub
+    mode="out-in"
+    name="placeholder"
+  >
+    <div
+      class="v-communication-detail__page"
+    >
+      <div
+        class="v-communication-detail__title text-l-bold"
+      >
+        description
+      </div>
+       
+      <div
+        class="v-communication-detail__date text-s-book"
+      >
+        
+				7/11/2020
+			
+      </div>
+       
+      <div
+        class="v-communication-detail__text text-m-book"
+      >
+        text
+      </div>
+       
+      <!---->
+    </div>
+  </transition-stub>
+</l-page-stub>
+`;

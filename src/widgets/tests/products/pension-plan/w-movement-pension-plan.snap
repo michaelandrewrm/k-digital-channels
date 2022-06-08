@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`w-movement-pension-plan.vue renders correctly 1`] = `
+<div
+  class="w-movement-pension-plan"
+  tabindex="0"
+>
+  <span
+    class="w-movement-pension-plan__reason text-m-medium"
+  >
+    COMPRA
+  </span>
+   
+  <span
+    class="w-movement-pension-plan__amount text-l-medium"
+  >
+    
+		+2.000,40 €
+	
+  </span>
+   
+  <span
+    class="w-movement-pension-plan__operation-date text-s-light"
+  >
+    
+		2/1/2020
+	
+  </span>
+   
+  <span
+    class="w-movement-pension-plan__unity-value"
+  >
+    
+		Valor unidad:
+		
+    <span
+      class="text-s-book"
+    >
+      
+			654,400000000 €
+		
+    </span>
+  </span>
+   
+  <span>
+    <span
+      class="w-movement-pension-plan__unity-quantity text-s-book"
+    >
+      
+			123 Unidades
+		
+    </span>
+  </span>
+</div>
+`;

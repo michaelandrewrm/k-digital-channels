@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`w-portfolio-managed-portfolio.vue renders correctly 1`] = `
+<div
+  class="w-portfolio-managed-portfolio__list"
+>
+  <button
+    class="w-portfolio-managed-portfolio__button"
+  >
+    <c-card-item-stub
+      accessiblesubtitle="Producto terminado en 2708."
+      data-testid="product-card-item"
+      icon="[object Object]"
+      info="106,58 €"
+      slot="default"
+      subinfo="Saldo"
+      subtitle="**** **** **** **** **** 2708"
+      title="Cuenta gestionada"
+    />
+  </button>
+  <button
+    class="w-portfolio-managed-portfolio__button"
+  >
+    <c-card-item-stub
+      accessiblesubtitle="Producto terminado en 1755."
+      data-testid="product-card-item"
+      icon="[object Object]"
+      info="982,80 €"
+      slot="default"
+      subinfo="Saldo"
+      subtitle="***** ***** 1755"
+      title="Depósito gestionado"
+    />
+  </button>
+  <button
+    class="w-portfolio-managed-portfolio__button"
+  >
+    <c-card-item-stub
+      accessiblesubtitle="Producto terminado en 3212."
+      data-testid="product-card-item"
+      icon="[object Object]"
+      info="100,00 USD"
+      slot="default"
+      subinfo="Saldo"
+      subtitle="**** **** **** **** **** 3212"
+      title="Cuenta gestionada en dólares"
+    />
+  </button>
+  <button
+    class="w-portfolio-managed-portfolio__button"
+  >
+    <c-card-item-stub
+      accessiblesubtitle=""
+      data-testid="product-card-item"
+      icon="[object Object]"
+      info="300,00 £"
+      slot="default"
+      subinfo="Saldo"
+      subtitle=""
+      title="Cuentas gestionadas en libras"
+    />
+  </button>
+</div>
+`;

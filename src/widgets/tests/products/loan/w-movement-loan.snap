@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`w-movement-loan.vue renders correctly 1`] = `
+<router-link-stub
+  ariacurrentvalue="page"
+  class="w-movement-loan"
+  event="click"
+  tag="button"
+  to="[object Object]"
+>
+  <div
+    class="w-movement-loan__container"
+  >
+    <span
+      class="w-movement-loan__title text-m-medium"
+    >
+      COMPRA
+    </span>
+     
+    <span
+      class="w-movement-loan__value text-l-medium"
+    >
+      2.000,40 €
+    </span>
+     
+    <span
+      class="w-movement-loan__date text-s-light"
+    >
+      
+			2/1/2020
+		
+    </span>
+  </div>
+</router-link-stub>
+`;

@@ -1,0 +1,10 @@
+/dist/
+/docs/
+/false/
+/node_modules/
+/public/
+/tests/e2e/videos/
+/tests/e2e/screenshots/
+/tests/unit/coverage/
+jsconfig.json
+aliases.config.js

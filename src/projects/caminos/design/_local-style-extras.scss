@@ -1,0 +1,171 @@
+@function toRGB($color) {
+	@return red($color) + ', ' + green($color) + ', ' + blue($color);
+}
+
+[data-theme='dracula'] {
+	--color-surface: #{toRGB(#272b36)};
+	--color-surface-dark: #{toRGB(#191b22)};
+	--color-surface-light: #{toRGB(#343846)};
+
+	--color-text-primary: #{toRGB(#f3f7f2)};
+	--color-text-primary-light: #{toRGB(#f3f7f2)};
+	--color-text-secondary: #{toRGB(#f3f7f2)};
+	--color-text-secondary-light: #{toRGB(#f7bb6c)};
+	--color-text-accent: #{toRGB(#f3f7f2)};
+
+	--color-secondary: #{toRGB(#f7bb6c)};
+	--color-secondary-light: #{toRGB(#f7bb6c)};
+	--color-primary-dark: #{toRGB(#191b22)};
+	--color-primary-light: #{toRGB(#abb9de)};
+	--color-accent-primary: #{toRGB(#191b22)};
+	--color-accent-secondary: #{toRGB(#f7bb6c)};
+	--color-accent-error: #{toRGB(#fb5f58)};
+	--color-accent-error-light: #{toRGB(#fb5f58)};
+	--color-accent-icon: #{toRGB(#8199dd)};
+
+	--color-dark-surface: #{toRGB(#eeeef3)};
+	--color-dark-text-primary: #{toRGB(#001825)};
+	--color-dark-text-secondary: #{toRGB(#001825)};
+
+	--color-themed-surface: #{toRGB(#272b36)};
+	--color-themed-surface-dark: #{toRGB(#191b22)};
+	--color-themed-surface-light: #{toRGB(#343846)};
+
+	--color-gradient-chart-line-stop-1: var(--color-secondary-light);
+	--color-gradient-chart-line-stop-2: var(--color-secondary);
+	--color-gradient-chart-column-primary-1: #{toRGB(#4c56a6)};
+	--color-gradient-chart-column-primary-2: #{toRGB(#4c56a6)};
+	--color-gradient-chart-column-secondary-1: #{toRGB(#f4a25a)};
+	--color-gradient-chart-column-secondary-2: #{toRGB(#f4a25a)};
+
+	--color-gradient-header: linear-gradient(to bottom, #13161b, #13161b);
+	--color-gradient-card-item: linear-gradient(to right, #343846, #303a5c);
+	--color-gradient-global-pos: #13161b, #13161b;
+
+	--color-gradient-acrylic-sheet-background: linear-gradient(
+			90deg,
+			#343946,
+			#12171bb7 100%
+		),
+		linear-gradient(318deg, #12171b 50%, #343946 50%);
+	--color-gradient-acrylic-sheet-stop-4: #{toRGB(#343946)};
+
+	--color-gradient-dark-acrylic-sheet-stop-1: #{toRGB(#262627)};
+	--color-gradient-dark-acrylic-sheet-stop-2: #{toRGB(#282829)};
+	--color-gradient-dark-acrylic-sheet-stop-3: #{toRGB(#313132)};
+	--color-gradient-dark-acrylic-sheet-stop-4: #{toRGB(#323233)};
+}
+
+[data-theme='bold'] {
+	--color-primary: #{toRGB(#00395a)};
+	--color-primary-light: #{toRGB(#29679c)};
+	--color-primary-dark: #{toRGB(#1c5272)};
+
+	--color-secondary: #{toRGB(#f7b866)};
+	--color-secondary-light: #{toRGB(#ffd483)};
+	--color-secondary-dark: #{toRGB(#a8752d)};
+
+	--color-surface: #{toRGB(#f6f7f8)};
+	--color-surface-dark: #{toRGB(#eaedf1)};
+	--color-surface-light: #{toRGB(#ffffff)};
+
+	--color-dark-surface: #{toRGB(#001825)};
+	--color-dark-text-primary: #{toRGB(#ffffff)};
+	--color-dark-text-secondary: #{toRGB(#ffd483)};
+
+	--color-themed-surface: #{toRGB(#0e2636)};
+	--color-themed-surface-dark: #{toRGB(#001825)};
+	--color-themed-surface-light: #{toRGB(#2c78a7)};
+
+	--color-gradient-chart-column-primary-1: #{toRGB(#2c78a7)};
+	--color-gradient-chart-column-primary-2: #{toRGB(#2c78a7)};
+	--color-gradient-chart-column-secondary-1: #{toRGB(#f7b866)};
+	--color-gradient-chart-column-secondary-2: #{toRGB(#f7b866)};
+
+	--color-text-primary: #{toRGB(#1c5272)};
+	--color-text-primary-light: #{toRGB(#ffffff)};
+	--color-text-secondary: #{toRGB(#f7b866)};
+	--color-text-secondary-light: #{toRGB(#ffd483)};
+	--color-text-secondary-dark: #{toRGB(#a8752d)};
+	--color-text-error: #{toRGB(#fb5f58)};
+	--color-text-accent: #{toRGB(#29679c)};
+	--color-accent-icon: #{toRGB(#29679c)};
+	--color-accent-secondary: #{toRGB(#f7b866)};
+
+	--color-gradient-header: linear-gradient(
+		90deg,
+		RGB(var(--color-primary)),
+		RGB(var(--color-primary))
+	);
+	--color-gradient-card-item: linear-gradient(
+		90deg,
+		RGB(var(--color-primary-light)),
+		RGB(var(--color-primary-light))
+	);
+
+	--color-gradient-global-pos: linear-gradient(90deg, #1c5272, #205885b7 100%),
+		linear-gradient(318deg, #1f2e3a 50%, #35698b 50%);
+
+	--color-gradient-acrylic-sheet-background: linear-gradient(
+			90deg,
+			#1c5272,
+			#205885b7 100%
+		),
+		linear-gradient(318deg, #1f2e3a 50%, #35698b 50%);
+	--color-gradient-acrylic-sheet-stop-4: #{toRGB(#1c5272)};
+
+	--color-gradient-dark-acrylic-sheet-stop-1: #{toRGB(#021a28)};
+	--color-gradient-dark-acrylic-sheet-stop-2: #{toRGB(#0b222f)};
+	--color-gradient-dark-acrylic-sheet-stop-3: #{toRGB(#243844)};
+	--color-gradient-dark-acrylic-sheet-stop-4: #{toRGB(#243844)};
+}
+
+[data-theme='pastel'] {
+	--color-surface: #{toRGB(#ececf0)};
+	--color-surface-dark: #{toRGB(#e2e6ed)};
+	--color-surface-light: #{toRGB(#faf5f5)};
+
+	--color-dark-surface: #{toRGB(#44506d)};
+
+	--color-themed-surface: #{toRGB(#7286b3)};
+	--color-themed-surface-dark: #{toRGB(#7286b3)};
+	--color-themed-surface-light: #{toRGB(#ffd79a)};
+
+	--color-text-primary: #{toRGB(#576a97)};
+	--color-text-secondary: #{toRGB(#e999a7)};
+	--color-text-secondary-light: #{toRGB(#f0d9a8)};
+	--color-text-error: #{toRGB(#d38e8a)};
+
+	--color-accent-primary: #{toRGB(#acc5e3)};
+	--color-primary: #{toRGB(#778fc5)};
+	--color-primary-light: #{toRGB(#7992c0)};
+	--color-primary-dark: #{toRGB(#687aa5)};
+	--color-secondary: #{toRGB(#faca81)};
+	--color-secondary-light: #{toRGB(#faca81)};
+	--color-accent-secondary: #{toRGB(#e999a7)};
+	--color-accent-error: #{toRGB(#ff989c)};
+
+	--color-accent-icon: #{toRGB(#8cb9e0)};
+
+	--color-gradient-chart-line-stop-1: #{toRGB(#e999a7)};
+	--color-gradient-chart-line-stop-2: #{toRGB(#ff989c)};
+	--color-gradient-chart-column-primary-1: #{toRGB(#e999a7)};
+	--color-gradient-chart-column-primary-2: #{toRGB(#ff989c)};
+	--color-gradient-chart-column-secondary-1: #{toRGB(#acc5e3)};
+	--color-gradient-chart-column-secondary-2: #{toRGB(#7286b3)};
+
+	--color-gradient-acrylic-sheet-background: linear-gradient(
+		90deg,
+		#e999a7,
+		#ffd79a 100%
+	);
+	--color-gradient-acrylic-sheet-stop-4: #{toRGB(#e999a7)};
+
+	--color-gradient-global-pos: radial-gradient(
+		circle 200px at 50% 30%,
+		RGB(var(--color-themed-surface)) 10%,
+		RGB(var(--color-primary))
+	);
+
+	--button-color-raised-text: #{toRGB(#778cbb)};
+}

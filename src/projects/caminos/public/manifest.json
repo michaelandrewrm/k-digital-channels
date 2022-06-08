@@ -1,0 +1,43 @@
+{
+	"name": "Banco Caminos",
+	"short_name": "Caminos",
+	"display": "standalone",
+	"orientation": "portrait",
+	"start_url": "/?utm_source=homescreen",
+	"theme_color": "#d7a461",
+	"background_color": "#002941",
+	"launch_path": "/",
+	"prefer_related_applications": false,
+	"related_applications": [
+		{
+			"platform": "play",
+			"id": "es.gbc.bancocaminos"
+		}
+	],
+	"icons": [
+		{
+			"src": "./icons/pwaIcon.png",
+			"type": "image/png",
+			"sizes": "640x640",
+			"purpose": "any maskable"
+		}
+	],
+	"description": "Todas tus finanzas a un solo vistazo. Bienvenido a Banco Caminos.",
+	"screenshots": [
+		{
+			"src": "./screenshots/scr1.jpg",
+			"sizes": "430x960",
+			"type": "image/jpeg"
+		},
+		{
+			"src": "./screenshots/scr2.jpg",
+			"sizes": "430x960",
+			"type": "image/jpeg"
+		},
+		{
+			"src": "./screenshots/scr3.jpg",
+			"sizes": "430x960",
+			"type": "image/jpeg"
+		}
+	]
+}

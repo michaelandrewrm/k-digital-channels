@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-profile-item should render correctly 1`] = `
+<div class="c-profile-item" tabindex="0">
+  <div class="c-profile-item__content">
+    <div class="c-profile-item__icon">
+      <c-icon-stub size="l" src="@icons/flag"></c-icon-stub>
+    </div>
+    <div class="c-profile-item__title text-m-medium">
+      <span class="text-m-medium">profile</span>
+    </div>
+    <button class="c-profile-item__more-button">
+      <span aria-hidden="true">⋮</span>
+    </button>
+  </div>
+  <div class="c-profile-item__options">
+    <button class="c-profile-item__delete">
+      <c-icon-stub size="m" src="@icons/trash"></c-icon-stub>
+      <span class="text-m-medium">Eliminar</span>
+    </button>
+    <button class="c-profile-item__edit">
+      <c-icon-stub size="m" src="@icons/editPen"></c-icon-stub>
+      <span class="text-m-medium">Editar</span>
+    </button>
+  </div>
+</div>
+`;

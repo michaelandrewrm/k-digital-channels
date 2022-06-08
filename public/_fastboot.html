@@ -1,0 +1,178 @@
+<script>
+	function FastBoot(arg) {
+		var JSFiles = arg.JSFiles;
+		var CSSFiles = arg.CSSFiles;
+		var mode = arg.mode;
+		var version = window.VUE_APP_CONFIG.version;
+
+		function loadScript(src) {
+			return new Promise(function(resolve, reject) {
+				var script = document.createElement('script');
+
+				script.src = src;
+				script.addEventListener('load', resolve);
+				script.addEventListener('error', reject);
+				document.body.appendChild(script);
+			});
+		}
+
+		function loadLink(href, rel) {
+			return new Promise(function(resolve, reject) {
+				var link = document.createElement('link');
+
+				link.href = href;
+				link.rel = rel || 'stylesheet';
+				link.addEventListener('load', resolve);
+				link.addEventListener('error', reject);
+				document.body.appendChild(link);
+			});
+		}
+
+		var waitToLoadModes = {
+			dev: 1,
+			test: 0,
+			pro: 1,
+			hybrid: 0,
+		};
+
+		var waitToFadeOutModes = {
+			dev: 300,
+			test: 0,
+			pro: 300,
+			hybrid: 0,
+		};
+
+		var speedMode = 'dev';
+
+		if (window.Cypress) {
+			speedMode = 'test';
+		} else if (navigator.userAgent.includes('Skybrid')) {
+			speedMode = 'hybrid';
+		} else if (
+			mode === 'production' &&
+			!matchMedia('(min-width: 800px)').matches
+		) {
+			speedMode = 'pro';
+		}
+
+		var splashElement = document.getElementById('splash');
+
+		function removeSplashScreen() {
+			splashElement.remove();
+			splashElement = null;
+			window.dispatchEvent(new Event('splashscreen-unload'));
+		}
+
+		function fadeOutSplashScreen() {
+			splashElement.addEventListener('transitionend', removeSplashScreen);
+			splashElement.classList.add('fadeout');
+		}
+
+		function doubleRAF(cb) {
+			requestAnimationFrame(function() {
+				requestAnimationFrame(cb);
+			});
+		}
+
+		function disassembleSplashScreen() {
+			doubleRAF(function() {
+				splashElement.classList.add('stop');
+				setTimeout(function() {
+					splashElement.classList.add('disassemble');
+					setTimeout(fadeOutSplashScreen, waitToFadeOutModes[speedMode]);
+				}, 16);
+			});
+		}
+
+		function loadApp() {
+			var criticalFilesLoaded = [];
+
+			JSFiles.forEach(function(file) {
+				criticalFilesLoaded.push(loadScript(file));
+			});
+			CSSFiles.forEach(function(file) {
+				criticalFilesLoaded.push(loadLink(file));
+			});
+
+			return Promise.all(criticalFilesLoaded);
+		}
+
+		function wait(ms) {
+			return new Promise(function(resolve) {
+				setTimeout(resolve, ms);
+			});
+		}
+
+		var waitUntilInitialTransition = wait(waitToLoadModes[speedMode]);
+
+		var waitUntilAppIsMounted = new Promise(function(resolve) {
+			var fn = function() {
+				resolve();
+				window.removeEventListener('ready-for-action', fn);
+			};
+			window.addEventListener('ready-for-action', fn);
+		});
+
+		var waitUntilFirstViewIsRender = new Promise(function(resolve) {
+			var fn = function() {
+				resolve();
+				window.removeEventListener('bridge-router-nav', fn);
+			};
+			window.addEventListener('bridge-router-nav', fn);
+		});
+
+		var waitToNewVersionUpdate = new Promise(function(resolve) {
+			var swIsSupported = 'serviceWorker' in navigator;
+
+			if (!swIsSupported) {
+				return resolve();
+			}
+
+			// Cuando se actualiza el service worker en el momento de instalarse
+			// se guarda en el caché la versión de la aplicación relacionada a
+			// ese service worker. Si en esta comprobación la versión no es la
+			// misma, significa que debemos esperar a la descarga de un nuevo
+			// service worker.
+			caches
+				.match(new Request('version'))
+				.then(function(response) {
+					return response.text();
+				})
+				.then(function(swVersion) {
+					if (swVersion === '' + version) {
+						resolve();
+					}
+				})
+				.catch(resolve);
+
+			var msTimeOut = 7000;
+			setTimeout(resolve, msTimeOut);
+		});
+
+		function start() {
+			console.log('Version:', version || 'dev');
+
+			if (waitToLoadModes[speedMode] > 0) {
+				waitUntilInitialTransition
+					.then(function() {
+						return Promise.all([
+							loadApp(),
+							waitUntilAppIsMounted,
+							waitUntilFirstViewIsRender,
+							waitToNewVersionUpdate,
+						]);
+					})
+					.then(function() {
+						disassembleSplashScreen();
+					});
+			} else {
+				loadApp();
+				Promise.all([waitUntilAppIsMounted, waitUntilFirstViewIsRender]).then(
+					removeSplashScreen
+				);
+			}
+		}
+
+		start();
+	}
+</script>

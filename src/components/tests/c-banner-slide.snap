@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-banner-slide.vue should render correctly 1`] = `
+<div class="c-banner-slide">
+  <div class="c-banner-slide__wrapper">
+    <button aria-hidden="true" class="c-banner-slide__button">
+      <span aria-hidden="true">×</span>
+    </button>
+    <img alt class="c-banner-slide__image" draggable="false" src="image.jpg">
+    <div class="c-banner-slide__title-wrapper">
+      <h4 class="c-banner-slide__title text-l-medium">
+        Anything
+      </h4>
+      <div class="c-banner-slide__subtitle text-m-book">
+        Lorem ipsom dolor...
+      </div>
+    </div>
+    <div class="c-banner-slide__icon-wrapper">
+      <div class="c-banner-slide__icon">
+        <c-icon-button-stub aria-label="No volver a mostrar" class="c-banner-slide__iconbutton --unlike" icon="@icons/like"></c-icon-button-stub>
+      </div>
+      <div class="c-banner-slide__icon">
+        <c-icon-button-stub aria-label="Me gusta" class="c-banner-slide__iconbutton --like --fill" icon="@icons/likeFill"></c-icon-button-stub>
+      </div>
+    </div>
+  </div>
+  <!---->
+  <!---->
+</div>
+`;

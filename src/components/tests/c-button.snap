@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-button.vue should render as anchor 1`] = `
+<a class="button text-fixed-m-medium" href="/" role="button">
+  <!---->
+  <span class="c-button__label">Aceptar</span>
+</a>
+`;
+
+exports[`c-button.vue should render as dense 1`] = `
+<button class="button button--dense text-fixed-m-medium">
+  <!---->
+  <span class="c-button__label">Aceptar</span>
+</button>
+`;
+
+exports[`c-button.vue should render as outlined 1`] = `
+<button class="button button--outlined text-fixed-m-medium">
+  <!---->
+  <span class="c-button__label">Aceptar</span>
+</button>
+`;
+
+exports[`c-button.vue should render as raised 1`] = `
+<button class="button button--raised text-fixed-m-medium">
+  <!---->
+  <span class="c-button__label">Aceptar</span>
+</button>
+`;
+
+exports[`c-button.vue should render as unelevated 1`] = `
+<button class="button button--unelevated text-fixed-m-medium">
+  <!---->
+  <span class="c-button__label">Aceptar</span>
+</button>
+`;
+
+exports[`c-button.vue should render with the text-fixed-m-medium class 1`] = `
+<button class="button text-fixed-m-medium">
+  <!---->
+  <span class="c-button__label">Aceptar</span>
+</button>
+`;

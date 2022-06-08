@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bancofar</title>
+
+		<style>
+			.browser-offline {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-items: center;
+				padding: 24px;
+				background: linear-gradient(to bottom, #235368, #436c7e 22%, #0f3356);
+				z-index: 9999;
+				font-family: Arial;
+				box-sizing: border-box;
+			}
+			.browser-offline__content {
+				max-width: 320px;
+				color: #ffffff;
+				text-align: center;
+				padding-top: 150px;
+				margin: 0 auto;
+			}
+			.browser-offline__content .browser-offline__icon {
+				color: #98f6dc;
+				margin-bottom: 10px;
+				font-size: 35px;
+			}
+			.browser-offline__title {
+				margin-bottom: 30px;
+				font-size: 20px;
+				font-weight: 600;
+				outline: none;
+			}
+			.browser-offline__desc {
+				font-size: 14px;
+				font-weight: 100;
+				line-height: 1.4;
+				outline: none;
+			}
+			.browser-offline__icon {
+				display: inline-block;
+				width: 1em;
+				overflow: visible;
+				flex-shrink: 0;
+			}
+			.browser-offline__icon-svg {
+				display: block;
+			}
+			.browser-offline__icon-path {
+				color: inherit;
+				fill: currentColor;
+			}
+			.browser-offline__button {
+				line-height: 1.14;
+				letter-spacing: -0.6px;
+				text-decoration: none;
+				text-transform: uppercase;
+				display: inline-flex;
+				position: relative;
+				align-items: center;
+				justify-content: center;
+				box-sizing: border-box;
+				min-width: 320px;
+				height: 48px;
+				border: none;
+				outline: none;
+				user-select: none;
+				appearance: none;
+				border-radius: 15px;
+				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+				white-space: nowrap;
+				background: #6accb1;
+				color: #123456;
+				box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+				padding: 0 16px 0 16px;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<form class="browser-offline" method="GET">
+			<div class="browser-offline__content">
+				<i
+					class="browser-offline__icon"
+					style="height: 1.0303em;"
+					tabindex="-1"
+				>
+					<svg viewBox="0 0 33 34" class="browser-offline__icon-svg" alt="">
+						<path
+							d="M12.767 12.767c.466-.467 1.233-.467 1.733 0 .467.466.467 1.233 0 1.733l-2.833 2.833 3 3L17.5 17.5c.467-.5 1.233-.5 1.733 0 .467.5.467 1.267.034 1.767L16.433 22.1l2.467 2.467c.567.533.567 1.433 0 2-.267.266-.633.4-1 .4s-.733-.134-1-.4l-.433-.434-1.434 1.434c-1.466 1.466-3.366 2.2-5.3 2.2-1.466 0-2.933-.434-4.2-1.3L2.6 31.4c-.267.267-.633.4-1 .4s-.7-.1-1-.4c-.533-.533-.533-1.467 0-2l2.933-2.933c-1.966-2.9-1.666-6.934.9-9.5l1.434-1.434-.434-.433c-.566-.533-.566-1.433 0-2 .567-.567 1.434-.567 2 0l2.5 2.5zm-4.9 4.766l-1.434 1.434c-1.833 1.833-1.833 4.766 0 6.6 1.834 1.833 4.767 1.833 6.6 0l1.434-1.434-6.6-6.6zM29.433.6c.534-.567 1.434-.567 2 0 .534.533.534 1.433-.033 1.967L28.467 5.5c.833 1.233 1.3 2.667 1.3 4.2 0 2-.8 3.9-2.2 5.3l-1.434 1.433.434.434c.566.533.566 1.433 0 2-.267.266-.634.4-1 .4-.367 0-.734-.134-1-.4L13.133 7.433c-.566-.533-.566-1.433 0-2 .567-.566 1.434-.566 2 0l.434.434L17 4.433c2.5-2.5 6.6-2.8 9.5-.9zm-3.866 5.833c-1.767-1.766-4.834-1.766-6.6 0l-1.434 1.434 6.6 6.6 1.434-1.434c.9-.866 1.366-2.066 1.366-3.3 0-1.233-.5-2.433-1.366-3.3z"
+							class="browser-offline__icon-path"
+						></path>
+					</svg>
+				</i>
+				<h1 class="browser-offline__title">
+					Error de conexión
+				</h1>
+				<p class="browser-offline__desc">
+					Por favor, comprueba tu conexión a internet o inténtalo de nuevo más
+					tarde.
+				</p>
+			</div>
+			<button class="browser-offline__button">Intentar de nuevo</button>
+		</form>
+	</body>
+</html>

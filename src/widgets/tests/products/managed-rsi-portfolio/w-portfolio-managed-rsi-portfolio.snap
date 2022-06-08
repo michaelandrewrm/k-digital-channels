@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`w-portfolio-managed-rsi-portfolio.vue renders correctly 1`] = `
+<div
+  class="w-portfolio-managed-rsi-portfolio__list"
+>
+  <button
+    class="w-portfolio-managed-rsi-portfolio__button"
+  >
+    <c-card-item-stub
+      accessiblesubtitle="Producto terminado en 7580."
+      data-testid="product-card-item"
+      icon="[object Object]"
+      info=""
+      slot="default"
+      subinfo="Disponible"
+      subtitle="**** **** **** **** 7580"
+      title="CARTERA GESTIONADA"
+    />
+  </button>
+  <button
+    class="w-portfolio-managed-rsi-portfolio__button"
+  >
+    <c-card-item-stub
+      accessiblesubtitle="Producto terminado en 3212."
+      data-testid="product-card-item"
+      icon="[object Object]"
+      info="123,45 USD"
+      slot="default"
+      subinfo="Saldo"
+      subtitle="**** **** **** **** **** 3212"
+      title="Cuenta gestionada en dólares"
+    />
+  </button>
+  <button
+    class="w-portfolio-managed-rsi-portfolio__button"
+  >
+    <c-card-item-stub
+      accessiblesubtitle=""
+      data-testid="product-card-item"
+      icon="[object Object]"
+      info="246,90 £"
+      slot="default"
+      subinfo="Saldo"
+      subtitle=""
+      title="Cuentas gestionadas en libras"
+    />
+  </button>
+  <button
+    class="w-portfolio-managed-rsi-portfolio__button"
+  >
+    <c-card-item-stub
+      accessiblesubtitle="Producto terminado en 1755."
+      data-testid="product-card-item"
+      icon="[object Object]"
+      info="123,45 €"
+      slot="default"
+      subinfo="Saldo"
+      subtitle="***** ***** 1755"
+      title="Depósito gestionado"
+    />
+  </button>
+  <button
+    class="w-portfolio-managed-rsi-portfolio__button"
+  >
+    <c-card-item-stub
+      accessiblesubtitle="Producto terminado en 0031."
+      data-testid="product-card-item"
+      icon="[object Object]"
+      info="0,00 €"
+      slot="default"
+      subinfo="Gastado este mes"
+      subtitle="***** ***** 0031"
+      title="Tarjeta de débito"
+    />
+  </button>
+</div>
+`;

@@ -1,0 +1,48 @@
+@import '~@local-design/_local-theme-config.scss';
+
+$weights: (
+	'light': 100,
+	'book': 300,
+	'medium': 400,
+	'bold': 600,
+);
+
+$fixedSizes: (
+	'xxl': 3rem,
+	'xl': 2.1rem,
+	'l': 1.6rem,
+	'm': 1.4rem,
+	's': 1.2rem,
+);
+
+$sizesOnDesktop: (
+	'xxl': 4rem,
+	'xl': 3.6rem,
+	'l': 1.8rem,
+	'm': 1.6rem,
+	's': 1.2rem,
+);
+
+/**
+ * Use it like
+ *
+ *   @extend %typo-xl-bold
+ */
+@each $weightName, $weight in $weights {
+	@each $sizeName, $size in $fixedSizes {
+		%typo-fixed-#{$sizeName}-#{$weightName} {
+			font-family: $theme-font-family;
+			font-weight: $weight;
+			font-size: $size;
+		}
+
+		%typo-#{$sizeName}-#{$weightName} {
+			@extend %typo-fixed-#{$sizeName}-#{$weightName};
+
+			// Enable font-responsiveness
+			// @media ($on-desktop) {
+			// 	font-size: map-get($sizesOnDesktop, $sizeName);
+			// }
+		}
+	}
+}

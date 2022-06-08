@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`w-movement-equities.vue renders correctly 1`] = `
+<router-link-stub
+  ariacurrentvalue="page"
+  class="w-movement-equities"
+  event="click"
+  tag="button"
+  to="[object Object]"
+>
+  <div
+    class="w-movement-equities__container"
+  >
+    <div
+      class="w-movement-equities__col1"
+    >
+      <span
+        class="w-movement-equities__title text-m-medium"
+      >
+        COMPRA
+      </span>
+       
+      <span
+        class="w-movement-equities__date text-s-light"
+      >
+        
+				2/1/2020
+			
+      </span>
+       
+      <span
+        class="w-movement-equities__value text-l-medium"
+      >
+        2.000,40 €
+      </span>
+    </div>
+     
+    <div
+      class="w-movement-equities__col2"
+    >
+      <div
+        class="w-movement-equities__row2"
+      >
+        <span
+          class="w-movement-equities__title text-m-medium"
+        >
+          
+        </span>
+         
+        <span
+          class="w-movement-equities__title text-s-light"
+        >
+          
+        </span>
+      </div>
+       
+      <span
+        class="w-movement-equities__quantity text-s-book"
+      >
+        
+				2.400 Títulos
+			
+      </span>
+    </div>
+  </div>
+</router-link-stub>
+`;

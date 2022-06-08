@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`w-movement-credit.vue renders correctly 1`] = `
+<router-link-stub
+  ariacurrentvalue="page"
+  class="w-movement-credit"
+  event="click"
+  tag="button"
+  to="[object Object]"
+>
+  <c-list-item-stub
+    amount="123,45 €"
+    balance="123,45 €"
+    info="2/1/2020"
+    title=""
+  />
+</router-link-stub>
+`;

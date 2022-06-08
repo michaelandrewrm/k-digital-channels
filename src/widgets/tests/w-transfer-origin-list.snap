@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`w-transfer-origin-list.vue renders correctly 1`] = `
+<div
+  class="w-transfer-origin-list__main w-transfer-origin-list__list"
+  data-testid="list"
+  role="list"
+>
+  <button
+    class="w-transfer-origin-list__button"
+  >
+    <c-card-item-stub
+      accessiblesubtitle="Producto terminado en 2708."
+      class="w-transfer-origin-list__card"
+      data-testid="product-card-item"
+      icon="[object Object]"
+      info="1.801,14 €"
+      subinfo="Saldo disponible"
+      subtitle="**** **** **** **** **** 2708"
+      title="Cuenta Corriente"
+    />
+  </button>
+  <button
+    class="w-transfer-origin-list__button"
+  >
+    <c-card-item-stub
+      accessiblesubtitle="Producto terminado en 8557."
+      class="w-transfer-origin-list__card"
+      data-testid="product-card-item"
+      icon="[object Object]"
+      info="826,74 €"
+      subinfo="Saldo disponible"
+      subtitle="**** **** **** **** **** 8557"
+      title="Cuenta Transparente"
+    />
+  </button>
+</div>
+`;

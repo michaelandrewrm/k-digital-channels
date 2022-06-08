@@ -1,0 +1,486 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`v-customer-offices.vue should match snapshot 1`] = `
+<l-page-stub
+  closable="true"
+>
+  <h1
+    tabindex="-1"
+  >
+    Oficinas
+  </h1>
+   
+  <div
+    class="v-customer-offices"
+  >
+    <div
+      class="v-customer-offices__content"
+    >
+      <h2
+        class="v-customer-offices__title text-xl-book"
+      >
+        
+				Oficinas principales
+			
+      </h2>
+       
+      <p
+        class="v-customer-offices__description text-m-light"
+      >
+        
+				En las oficinas de Banco Caminos atendemos las necesidades de nuestros clientes con un amplio horario, incluso los sábados por la mañana en Madrid, adaptándonos a la disponibilidad y horarios de la clientela.
+ Además, a través de nuestro servicio de Banca Telefónica se pueden realizar todas las operaciones y consultas que se deseen con el mismo trato y atención que en oficina.
+			
+      </p>
+       
+      <div
+        class="v-customer-offices__card"
+      >
+        <h2
+          class="v-customer-offices__card-title text-l-bold"
+        >
+          MADRID
+        </h2>
+         
+        <div
+          class="v-customer-offices__card-info"
+        >
+          <p
+            class="text-l-medium"
+          >
+            Dirección:
+          </p>
+           
+          <p
+            class="text-m-book"
+          >
+            C/Almagro, 8 - 28010 Madrid
+          </p>
+           
+          <p
+            class="text-l-medium"
+          >
+            Teléfono de contacto oficina:
+          </p>
+           
+          <p
+            class="text-m-book"
+          >
+            (+34) 91 310 88 39
+          </p>
+           
+          <p
+            class="text-l-medium"
+          >
+            Teléfono de contacto PYMES:
+          </p>
+           
+          <p
+            class="text-m-book"
+          >
+            (+34) 91 310 88 30
+          </p>
+           
+          <p
+            class="text-l-medium"
+          >
+            Teléfono de contacto financiación:
+          </p>
+           
+          <p
+            class="text-m-book"
+          >
+            (+34) 91 310 88 46
+          </p>
+           
+          <p
+            class="text-l-medium"
+          >
+            Fax:
+          </p>
+           
+          <p
+            class="text-m-book"
+          >
+            (+34) 91 310 96 97
+          </p>
+           
+          <p
+            class="text-l-medium"
+          >
+            Email:
+          </p>
+           
+          <p
+            class="text-m-book"
+          >
+            info@bancocaminos.es
+          </p>
+           
+          <p
+            class="text-l-medium"
+          >
+            Horario departamento de caja:
+          </p>
+           
+          <p
+            class="text-m-book --no-line-height"
+          >
+            
+						De Lunes a Viernes
+Mañanas de 8:30h a 15:00h
+Tardes 16:30h a 18:30h
+ Sábados
+ Mañanas de 9:00h a 13:45h
+					
+          </p>
+           
+          <p
+            class="text-l-medium"
+          >
+            Horarios resto de departamentos:
+          </p>
+           
+          <p
+            class="text-m-book --no-line-height"
+          >
+            
+						undefined.MADRID.CASHIER_SCHEDULE.SCHEDULE1
+					
+          </p>
+        </div>
+      </div>
+       
+      <div
+        class="v-customer-offices__card"
+      >
+        <h2
+          class="v-customer-offices__card-title text-l-bold"
+        >
+          MADRID
+        </h2>
+         
+        <div
+          class="v-customer-offices__card-info"
+        >
+          <p
+            class="text-l-medium"
+          >
+            Dirección:
+          </p>
+           
+          <p
+            class="text-m-book"
+          >
+            C/Almagro, 42 - 28010 Madrid
+          </p>
+           
+          <p
+            class="text-l-medium"
+          >
+            Teléfono de contacto oficina:
+          </p>
+           
+          <p
+            class="text-m-book"
+          >
+            (+34) 91 310 96 61
+          </p>
+           
+          <p
+            class="text-l-medium"
+          >
+            Email:
+          </p>
+           
+          <p
+            class="text-m-book"
+          >
+            almagro42@bancocaminos.es
+          </p>
+           
+          <p
+            class="text-l-medium"
+          >
+            Horarios:
+          </p>
+           
+          <p
+            class="text-m-book --no-line-height"
+          >
+            
+						De Lunes a Viernes
+Mañanas de 8:30h a 15:00h
+Tardes martes y jueves de 16:30h a 18:30h (caja cerrada)
+					
+          </p>
+        </div>
+      </div>
+       
+      <div
+        class="v-customer-offices__card"
+      >
+        <h2
+          class="v-customer-offices__card-title text-l-bold"
+        >
+          BARCELONA
+        </h2>
+         
+        <div
+          class="v-customer-offices__card-info"
+        >
+          <p
+            class="text-l-medium"
+          >
+            Dirección:
+          </p>
+           
+          <p
+            class="text-m-book"
+          >
+            Via Augusta, 153-157 - 08021 Barcelona
+          </p>
+           
+          <p
+            class="text-l-medium"
+          >
+            Teléfono de contacto oficina:
+          </p>
+           
+          <p
+            class="text-m-book"
+          >
+            (+34) 93 277 06 00
+          </p>
+           
+          <p
+            class="text-l-medium"
+          >
+            Teléfono de contacto empresas:
+          </p>
+           
+          <p
+            class="text-m-book"
+          >
+            (+34) 93 277 06 02
+          </p>
+           
+          <p
+            class="text-l-medium"
+          >
+            Teléfono de contacto banca privada:
+          </p>
+           
+          <p
+            class="text-m-book"
+          >
+            (+34) 93 277 06 05
+          </p>
+           
+          <p
+            class="text-l-medium"
+          >
+            Fax:
+          </p>
+           
+          <p
+            class="text-m-book"
+          >
+            (+34) 93 414 36 69
+          </p>
+           
+          <p
+            class="text-l-medium"
+          >
+            Email:
+          </p>
+           
+          <p
+            class="text-m-book"
+          >
+            barcelona@banccamins.cat
+          </p>
+           
+          <p
+            class="text-l-medium"
+          >
+            Horarios:
+          </p>
+           
+          <p
+            class="text-m-book --no-line-height"
+          >
+            
+						undefined.MADRID.CASHIER_SCHEDULE.SCHEDULE1
+					
+          </p>
+        </div>
+      </div>
+       
+      <div
+        class="v-customer-offices__card"
+      >
+        <h2
+          class="v-customer-offices__card-title text-l-bold"
+        >
+          A CORUÑA
+        </h2>
+         
+        <div
+          class="v-customer-offices__card-info"
+        >
+          <p
+            class="text-l-medium"
+          >
+            Dirección:
+          </p>
+           
+          <p
+            class="text-m-book"
+          >
+            C/ Cantón Grande 6, 3ºA - 15003 A Coruña
+          </p>
+           
+          <p
+            class="text-l-medium"
+          >
+            Teléfono de contacto oficina:
+          </p>
+           
+          <p
+            class="text-m-book"
+          >
+            (+34) 629 692 189
+          </p>
+           
+          <p
+            class="text-l-medium"
+          >
+            Email:
+          </p>
+           
+          <p
+            class="text-m-book"
+          >
+            acoruna@bancocaminos.es
+          </p>
+           
+          <p
+            class="text-l-medium"
+          >
+            Horarios:
+          </p>
+           
+          <p
+            class="text-m-book --no-line-height"
+          >
+            
+						De Lunes a Jueves
+Mañanas de 8:30h a 15:00h
+Tardes 16:30h a 18:30h
+Viernes
+Mañanas de 8:30h a 15:00h
+					
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</l-page-stub>
+`;
+
+exports[`v-customer-offices.vue should match snapshot when BF 1`] = `
+<l-page-stub
+  closable="true"
+>
+  <h1
+    tabindex="-1"
+  >
+    Oficinas
+  </h1>
+   
+  <div
+    class="v-customer-offices"
+  >
+    <div
+      class="v-customer-offices__content"
+    >
+      <div
+        class="v-customer-offices__description"
+      >
+        <p
+          class="text-m-book"
+        >
+          
+        </p>
+         
+        <p
+          class="text-l-medium"
+        >
+          Horarios:
+        </p>
+         
+        <p
+          class="text-m-book"
+        >
+          
+        </p>
+         
+        <p
+          class="text-m-book"
+        >
+          
+        </p>
+      </div>
+       
+      <div
+        class="v-customer-offices__card --bancofar"
+      >
+        <h2
+          class="v-customer-offices__card-title text-l-bold"
+        >
+          MADRID
+        </h2>
+         
+        <div
+          class="v-customer-offices__card-info text-m-book"
+        >
+          <p>
+            
+          </p>
+           
+          <p
+            class="--no-line-height"
+          >
+            
+          </p>
+        </div>
+      </div>
+       
+      <div
+        class="v-customer-offices__card --bancofar"
+      >
+        <h2
+          class="v-customer-offices__card-title text-l-bold"
+        >
+          MADRID
+        </h2>
+         
+        <div
+          class="v-customer-offices__card-info text-m-book"
+        >
+          <p>
+            
+          </p>
+           
+          <p
+            class="--no-line-height"
+          >
+            
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</l-page-stub>
+`;

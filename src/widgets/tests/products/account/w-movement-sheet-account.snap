@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`w-movement-sheet-account.vue should render correctly 1`] = `
+<c-acrylic-sheet-stub dotted="true" theme="light">
+  <c-icon-stub size src="@icons/productReceipt"></c-icon-stub>
+  <span class="w-movement-sheet-account__row text-fixed-m-medium">
+    Compra en Carrefour
+  </span>
+  <span class="w-movement-sheet-account__row text-fixed-l-bold">
+    -766,20&nbsp;€
+  </span>
+  <!---->
+</c-acrylic-sheet-stub>
+`;
+
+exports[`w-movement-sheet-account.vue should show an account name and account balance 1`] = `
+<c-acrylic-sheet-stub dotted="true" theme="light">
+  <c-icon-stub size src="@icons/productReceipt"></c-icon-stub>
+  <span class="w-movement-sheet-account__row text-fixed-m-medium">
+    Compra en Carrefour
+  </span>
+  <span class="w-movement-sheet-account__row text-fixed-l-bold">
+    -766,20&nbsp;€
+  </span>
+  <span class="w-movement-sheet-account__row text-m-medium">
+    Current account: 123,45&nbsp;€
+  </span>
+</c-acrylic-sheet-stub>
+`;

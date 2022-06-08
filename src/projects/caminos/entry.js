@@ -1,0 +1,1 @@
+import '@/projects/skyline/main';

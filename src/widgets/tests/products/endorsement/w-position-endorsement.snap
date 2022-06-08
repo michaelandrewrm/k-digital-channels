@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`w-position-endorsement.vue renders correctly 1`] = `
+<div class="w-position-endorsement">
+  <div class="c-list-icon-item">
+    <div class="c-list-icon-item__col1">
+      <c-icon-stub size="xs" src="@icons/calendar"></c-icon-stub>
+    </div>
+    <dl class="c-list-icon-item__col2">
+      <dt class="c-list-icon-item__title text-m-medium">Importe aval</dt>
+      <dd class="c-list-icon-item__description text-m-light">
+        <span>
+          123,45&nbsp;€
+        </span>
+        <!---->
+      </dd>
+    </dl>
+  </div>
+  <div class="c-list-icon-item">
+    <div class="c-list-icon-item__col1">
+      <c-icon-stub size="xs" src="@icons/walletMoney"></c-icon-stub>
+    </div>
+    <dl class="c-list-icon-item__col2">
+      <dt class="c-list-icon-item__title text-m-medium">Importe concedido</dt>
+      <dd class="c-list-icon-item__description text-m-light">
+        <span>
+          123,45&nbsp;€
+        </span>
+        <!---->
+      </dd>
+    </dl>
+  </div>
+  <div class="c-list-icon-item">
+    <div class="c-list-icon-item__col1">
+      <c-icon-stub size="xs" src="@icons/valueAccountUnit"></c-icon-stub>
+    </div>
+    <dl class="c-list-icon-item__col2">
+      <dt class="c-list-icon-item__title text-m-medium">Importe dispuesto</dt>
+      <dd class="c-list-icon-item__description text-m-light">
+        <span>
+          123,45&nbsp;€
+        </span>
+        <!---->
+      </dd>
+    </dl>
+  </div>
+</div>
+`;

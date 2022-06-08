@@ -1,0 +1,152 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`v-bizum-movement.vue remove additional content: request-with-additional-content 1`] = `
+<section>
+  <dl class="v-bizum-movement__item" icon="@icons/user">
+    <dt>Solicitado a</dt>
+    <dd>SANDORST</dd>
+  </dl>
+  <dl class="v-bizum-movement__item" icon="@icons/calendar">
+    <dt>Fecha de orden</dt>
+    <dd>19/10/2021</dd>
+  </dl>
+  <dl class="v-bizum-movement__item" icon="@icons/valueAccountUnit">
+    <dt>Importe</dt>
+    <dd>3,99&nbsp;€</dd>
+  </dl>
+  <dl class="v-bizum-movement__item" icon="@icons/paper">
+    <dt>Concepto</dt>
+    <dd>Comida</dd>
+  </dl>
+  <dl class="v-bizum-movement__item" icon="@icons/paper">
+    <dt></dt>
+    <dd>
+      <div class="v-bizum-movement__justification">me arrepentí</div>
+      <button icon="@icons/trash" size="l"></button>
+    </dd>
+  </dl>
+  <div>
+    <p class="v-bizum-movement__title text-m-medium">
+      Contenido adicional
+      <button icon="@icons/trash" size="l"></button>
+    </p>
+    <div>
+      <img alt class="v-bizum-movement__image" src="data:image/jpeg;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=">
+    </div>
+    <div class="text-m-book">te envio una foto 😚</div>
+  </div>
+</section>
+`;
+
+exports[`v-bizum-movement.vue remove additional justification: request-with-additional-justification 1`] = `
+<section>
+  <dl class="v-bizum-movement__item" icon="@icons/user">
+    <dt>Solicitado a</dt>
+    <dd>SANDORST</dd>
+  </dl>
+  <dl class="v-bizum-movement__item" icon="@icons/calendar">
+    <dt>Fecha de orden</dt>
+    <dd>19/10/2021</dd>
+  </dl>
+  <dl class="v-bizum-movement__item" icon="@icons/valueAccountUnit">
+    <dt>Importe</dt>
+    <dd>3,99&nbsp;€</dd>
+  </dl>
+  <dl class="v-bizum-movement__item" icon="@icons/paper">
+    <dt>Concepto</dt>
+    <dd>Comida</dd>
+  </dl>
+  <dl class="v-bizum-movement__item" icon="@icons/paper">
+    <dt></dt>
+    <dd>
+      <div class="v-bizum-movement__justification">me arrepentí</div>
+      <button icon="@icons/trash" size="l"></button>
+    </dd>
+  </dl>
+  <div>
+    <p class="v-bizum-movement__title text-m-medium">
+      Contenido adicional
+      <button icon="@icons/trash" size="l"></button>
+    </p>
+    <div>
+      <img alt class="v-bizum-movement__image" src="data:image/jpeg;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=">
+    </div>
+    <div class="text-m-book">te envio una foto 😚</div>
+  </div>
+</section>
+`;
+
+exports[`v-bizum-movement.vue render a ecommerce movement correctly: ecommerce movement 1`] = `
+<l-details-stub closable="true">
+  <h1 tabindex="-1">
+    Detalle de movimiento
+  </h1>
+  <div class="v-bizum-movement__header">
+    <c-translide-stub>
+      <c-acrylic-sheet-stub dotted="true" theme="light">
+        <c-icon-stub size src="@icons/productReceipt"></c-icon-stub>
+        <span class="text-m-book">
+          657136655
+        </span>
+        <span class="v-bizum-movement__value text-l-bold">
+          100,00&nbsp;€
+        </span>
+        <span class="text-s-medium">
+
+        </span>
+      </c-acrylic-sheet-stub>
+    </c-translide-stub>
+  </div>
+  <div class="v-bizum-movement__limit">
+    <c-translide-stub>
+      <section>
+        <c-list-icon-item-stub class="v-bizum-movement__item" description="657136655" icon="@icons/ecommerce" title="Comercio"></c-list-icon-item-stub>
+        <c-list-icon-item-stub class="v-bizum-movement__item" description="25/12/2019" icon="@icons/calendar" title="Fecha de orden"></c-list-icon-item-stub>
+        <c-list-icon-item-stub class="v-bizum-movement__item" description="100,00&nbsp;€" icon="@icons/valueAccountUnit" title="Importe"></c-list-icon-item-stub>
+        <c-list-icon-item-stub class="v-bizum-movement__item" description="Compra en el corte inglés" icon="@icons/paper" title="Concepto"></c-list-icon-item-stub>
+        <!---->
+        <!---->
+      </section>
+    </c-translide-stub>
+  </div>
+  <!---->
+</l-details-stub>
+`;
+
+exports[`v-bizum-movement.vue show render the image and text: send-with-additional-content 1`] = `
+<section>
+  <dl class="v-bizum-movement__item" icon="@icons/user">
+    <dt>Recibido de</dt>
+    <dd>Francisco</dd>
+  </dl>
+  <dl class="v-bizum-movement__item" icon="@icons/calendar">
+    <dt>Fecha de orden</dt>
+    <dd>25/12/2019</dd>
+  </dl>
+  <dl class="v-bizum-movement__item" icon="@icons/valueAccountUnit">
+    <dt>Importe</dt>
+    <dd>29,99&nbsp;€</dd>
+  </dl>
+  <dl class="v-bizum-movement__item" icon="@icons/paper">
+    <dt>Concepto</dt>
+    <dd>Comida</dd>
+  </dl>
+  <dl class="v-bizum-movement__item" icon="@icons/paper">
+    <dt>Motivo rechazo</dt>
+    <dd>
+      <div class="v-bizum-movement__justification">me arrepentí</div>
+      <!---->
+    </dd>
+  </dl>
+  <div>
+    <p class="v-bizum-movement__title text-m-medium">
+      Contenido adicional
+      <!---->
+    </p>
+    <div>
+      <img alt class="v-bizum-movement__image" src="data:image/jpeg;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=">
+    </div>
+    <div class="text-m-book">te envio una foto 😚</div>
+  </div>
+</section>
+`;

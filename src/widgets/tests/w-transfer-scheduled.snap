@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`w-transfer-scheduled.vue renders correctly 1`] = `
+<div
+  class="w-transfer-scheduled"
+>
+  <router-link-stub
+    ariacurrentvalue="page"
+    class="w-transfer-scheduled__button"
+    event="click"
+    tag="button"
+    to="[object Object]"
+  >
+    <div
+      class="w-transfer-scheduled__wrapper"
+    >
+      <div
+        class="text-m-medium w-transfer-scheduled__name"
+      >
+        
+				Transferencia programada
+			
+      </div>
+       
+      <div
+        class="text-l-medium w-transfer-scheduled__amount"
+      >
+        
+				420,25 €
+			
+      </div>
+       
+      <div
+        class="text-s-light"
+      >
+        
+				17/8/2020
+			
+      </div>
+       
+      <div
+        class="text-s-light w-transfer-scheduled__status"
+      >
+        
+				Quincenal
+			
+      </div>
+       
+      <div
+        class="text-s-light"
+      >
+        
+				proximamente
+			
+      </div>
+    </div>
+  </router-link-stub>
+</div>
+`;
+
+exports[`w-transfer-scheduled.vue renders correctly 2`] = `
+<div
+  class="w-transfer-scheduled"
+>
+  <router-link-stub
+    ariacurrentvalue="page"
+    class="w-transfer-scheduled__button"
+    event="click"
+    tag="button"
+    to="[object Object]"
+  >
+    <div
+      class="w-transfer-scheduled__wrapper"
+    >
+      <div
+        class="text-m-medium w-transfer-scheduled__name"
+      >
+        
+				Transferencia programada
+			
+      </div>
+       
+      <div
+        class="text-l-medium w-transfer-scheduled__amount"
+      >
+        
+				500,00 €
+			
+      </div>
+       
+      <div
+        class="text-s-light"
+      >
+        
+				1/1/2030
+			
+      </div>
+       
+      <div
+        class="text-s-light w-transfer-scheduled__status"
+      >
+        
+				Puntual
+			
+      </div>
+       
+      <div
+        class="text-s-light"
+      >
+        
+				proximamente
+			
+      </div>
+    </div>
+  </router-link-stub>
+</div>
+`;

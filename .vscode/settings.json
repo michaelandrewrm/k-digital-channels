@@ -1,0 +1,32 @@
+{
+	"editor.detectIndentation": false,
+	"editor.insertSpaces": false,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	},
+	"[jsonc]": {
+		"editor.tabSize": 3,
+		"editor.autoClosingBrackets": "always",
+		"editor.autoClosingQuotes": "always",
+		"editor.tabCompletion": "on",
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"vetur.format.defaultFormatter.html": "prettyhtml",
+	"vetur.format.defaultFormatter.scss": "prettier",
+	"vetur.format.defaultFormatter.js": "prettier",
+	"vetur.completion.useScaffoldSnippets": true,
+	"vetur.format.options.tabSize": 3,
+	"vetur.format.options.useTabs": true,
+	"auto-close-tag.SublimeText3Mode": true,
+	"eslint.validate": [
+		"javascript",
+		"vue"
+	],
+	"eslint.run": "onSave",
+	"prettier.configPath": "./prettier.config.js",
+	"jest.pathToJest": "npm run test:unit --",
+	"jest.autoEnable": false
+}

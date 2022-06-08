@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`w-transfer-favorite.vue renders correctly 1`] = `
+<div
+  class="w-transfer-favorite"
+  id="1234"
+>
+  <router-link-stub
+    ariacurrentvalue="page"
+    class="w-transfer-favorite__button"
+    event="click"
+    tag="button"
+    to="[object Object]"
+  >
+    <div
+      class="w-transfer-favorite__wrapper"
+    >
+      <span
+        class="text-m-medium w-transfer-favorite__name"
+      >
+        <div
+          class="text-m-medium w-transfer-favorite__name"
+        >
+          Pago curso
+        </div>
+      </span>
+       
+      <span
+        class="text-l-medium w-transfer-favorite__amount"
+      >
+        
+				420,25 €
+			
+      </span>
+    </div>
+  </router-link-stub>
+</div>
+`;

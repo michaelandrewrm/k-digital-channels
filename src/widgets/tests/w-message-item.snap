@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`w-message-item.vue renders an alert correctly 1`] = `
+<div
+  class="w-message-item"
+>
+  <button
+    class="w-message-item__button"
+  >
+    <div
+      class="w-message-item__title text-m-medium"
+    >
+      
+			Voluptas omnis maiores quae.
+		
+    </div>
+     
+    <div
+      class="w-message-item__date text-s-light"
+    >
+      
+			7/11/2020
+		
+    </div>
+     
+    <!---->
+  </button>
+</div>
+`;

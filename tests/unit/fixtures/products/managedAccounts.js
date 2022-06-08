@@ -1,0 +1,20 @@
+export default [
+	{
+		alias: 'Cuenta Corriente',
+		assetIds: null,
+		balance: { amount: 123.45, currency: { id: 'EUR', code: '978' } },
+		bic: 'GIQUMYU1350',
+		id: 'managed-account-1',
+		lastMovementDate: '2020-10-04T15:28:08.565Z',
+		movementIds: [],
+		name: 'Cuenta Corriente',
+		openingDate: '2020-02-09T07:48:37.418Z',
+		postedBalance: { amount: 123.45, currency: { id: 'EUR', code: '978' } },
+		productIds: [],
+		productNumber: { format: { id: 'IBAN', name: 'IBAN' }, value: 'ES2002348533217411118676' },
+		productSubtype: { id: 'm-01', name: 'Cuenta Corriente' },
+		productType: { id: '01', name: 'Cuentas' },
+		relationType: { id: '01', name: 'Titular' },
+		userId: null,
+	},
+];

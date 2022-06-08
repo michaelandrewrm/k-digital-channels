@@ -1,0 +1,45 @@
+/**
+ * Text utility classes.
+ *		.text-[size]-weight
+ *
+ * @param {[s, m, l, xl, xxl]} size
+ * @param {[light, book, medium, bold]} weight
+ *
+ * @example
+ *		.text-s-light
+ *		.text-xl-bold
+ */
+@each $weightName, $weight in $weights {
+	@each $sizeName, $size in $fixedSizes {
+		.text-#{$sizeName}-#{$weightName} {
+			@extend %typo-#{$sizeName}-#{$weightName};
+		}
+		.text-fixed-#{$sizeName}-#{$weightName} {
+			@extend %typo-fixed-#{$sizeName}-#{$weightName};
+		}
+	}
+}
+
+$colors: color-primary, color-primary-light, color-primary-dark, color-secondary,
+	color-secondary-light, color-secondary-dark, color-accent-error,
+	color-accent-success, color-accent-icon, color-accent-error-light,
+	color-accent-primary, color-gradient-chart-line-stop-1, color-surface,
+	color-surface-dark, color-surface-light, color-dark-surface,
+	color-dark-text-primary, color-dark-text-secondary, color-text-primary,
+	color-text-primary-light, color-text-secondary, color-text-secondary-light,
+	color-text-secondary-dark, color-text-error, color-text-details,
+	color-text-accent;
+
+/**
+ * Color utility classes.
+ * 		.color-primary-light
+ *		.background-color-secondary
+ */
+@each $color in $colors {
+	.#{$color} {
+		color: RGB(var(--#{$color}));
+	}
+	.background-#{$color} {
+		color: RGB(var(--#{$color}));
+	}
+}

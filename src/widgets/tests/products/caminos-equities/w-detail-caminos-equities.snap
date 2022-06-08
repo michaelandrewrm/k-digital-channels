@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`w-detail-caminos-equities.vue renders correctly 1`] = `
+<div
+  class="w-detail-caminos-equities"
+>
+  <div
+    class="w-detail-caminos-equities__group"
+  >
+    <c-list-icon-item-stub
+      description="4321"
+      icon="@icons/wallet"
+      title="Cuenta asociada"
+    />
+     
+    <w-interveners-stub
+      interveners=""
+    />
+  </div>
+   
+  <div
+    class="w-detail-caminos-equities__group"
+  >
+    <c-list-icon-item-stub
+      description="29/9/2020"
+      icon="@icons/calendar"
+      title="Fecha de apertura"
+    />
+  </div>
+   
+  <div
+    class="w-detail-caminos-equities__group"
+    data-testid="profiles"
+  >
+    <c-list-icon-item-stub
+      actionable=""
+      class="w-detail-caminos-equities__profiles"
+      description="Sin perfil asignado"
+      icon="@icons/interveners"
+      title="Perfil"
+    >
+      <ul
+        class="w-detail-caminos-equities__profiles-list"
+      >
+        <li>
+          
+					Sin perfil asignado
+				
+        </li>
+      </ul>
+    </c-list-icon-item-stub>
+  </div>
+</div>
+`;

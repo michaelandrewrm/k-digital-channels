@@ -1,0 +1,25 @@
+@import 'theme';
+
+:export {
+	// Breakpoints
+	onMobile: #{'(' + $on-mobile + ')'};
+	onTablet: #{'(' + $on-tablet + ')'};
+	onDesktop: #{'(' + $on-desktop + ')'};
+	onBigScreens: #{'(' + $on-big-screens + ')'};
+	onWideScreens: #{'(' + $on-wide-screens + ')'};
+	onPWA: #{'(' + $on-pwa + ')'};
+
+	// Layers
+	layerNegativeZIndex: #{$layer-negative-z-index};
+	layerPageZIndex: #{$layer-page-z-index};
+	layerDropdownZIndex: #{$layer-dropdown-z-index};
+	layerModalZIndex: #{$layer-modal-z-index};
+	layerPopoverZIndex: #{$layer-popover-z-index};
+	layerTooltipZIndex: #{$layer-tooltip-z-index};
+
+	borderRadiusXS: #{$border-radius-xs};
+	borderRadiusS: #{$border-radius-s};
+	borderRadiusM: #{$border-radius-m};
+	borderRadiusL: #{$border-radius-l};
+	borderRadiusXL: #{$border-radius-xl};
+}

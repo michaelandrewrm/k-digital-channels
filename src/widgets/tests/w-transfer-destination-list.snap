@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`w-transfer-destination-list.vue renders correctly 1`] = `
+<div
+  class="w-transfer-destination-list__main w-transfer-destination-list__list"
+  data-testid="list"
+  role="list"
+>
+  <button
+    class="w-transfer-destination-list__button"
+  >
+    <c-card-item-stub
+      accessiblesubtitle="Producto terminado en 2708."
+      class="w-transfer-destination-list__card"
+      data-testid="product-card-item"
+      icon="[object Object]"
+      subtitle="**** **** **** **** **** 2708"
+      title="Cuenta Corriente"
+    />
+  </button>
+  <button
+    class="w-transfer-destination-list__button"
+  >
+    <c-card-item-stub
+      accessiblesubtitle="Producto terminado en 8557."
+      class="w-transfer-destination-list__card"
+      data-testid="product-card-item"
+      icon="[object Object]"
+      subtitle="**** **** **** **** **** 8557"
+      title="Cuenta Transparente"
+    />
+  </button>
+</div>
+`;

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c-currency-label.vue renders corrently 1`] = `
+<div class="c-currency-label">
+  <!---->
+  <span class="c-currency-label__label text-xxl-book">142,42</span>
+  <span class="c-currency-label__label text-l-book">
+    €
+  </span>
+</div>
+`;

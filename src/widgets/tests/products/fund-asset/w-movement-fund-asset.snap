@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`w-movement-fund-asset.vue renders correctly 1`] = `
+<router-link-stub
+  ariacurrentvalue="page"
+  class="w-movement-fund-asset"
+  data-testid="movement-fund-asset"
+  event="click"
+  tag="button"
+  to="[object Object]"
+>
+  <div
+    class="w-movement-fund-asset__container"
+  >
+    <span
+      class="w-movement-fund__reason text-m-medium"
+    >
+      
+			COMPRA
+		
+    </span>
+     
+    <span
+      class="w-movement-fund-asset__value text-l-medium"
+    >
+      2.000,40 €
+    </span>
+     
+    <span
+      class="w-movement-fund-asset__date text-s-light"
+    >
+      
+			2/1/2020
+		
+    </span>
+     
+    <span
+      class="w-movement-fund-asset__unity-quantity text-s-book"
+    >
+      
+			1.000,000000 Participaciones
+		
+    </span>
+  </div>
+</router-link-stub>
+`;

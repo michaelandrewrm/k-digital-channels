@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, user-scalable=no"
+		/>
+		<title><%= htmlWebpackPlugin.options.title %></title>
+		<link rel="preconnect" href="https://www.google-analytics.com" />
+		<link rel="preconnect" href="https://sessions.bugsnag.com" />
+
+		<script>
+			/* ENVIRONMENT_CONFIGURATION_MARK_DO_NOT_REMOVE */
+		</script>
+		<script>
+			window.VUE_APP_CONFIG = window.VUE_APP_CONFIG || {
+				__devMode__: true,
+			};
+		</script>
+
+		<!-- Google Tag Manager -->
+		<script>
+			(function(w, d, s, l, i) {
+				w[l] = w[l] || [];
+				w[l].push({ 'gtm.start': new Date().getTime(), 'event': 'gtm.js' });
+				if (VUE_APP_CONFIG.env !== 'prd') return;
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src = i ? 'https://www.googletagmanager.com/gtm.js?id=' + i + dl : '';
+				f.parentNode.insertBefore(j, f);
+			})(
+				window,
+				document,
+				'script',
+				'dataLayer',
+				'<%= htmlWebpackPlugin.options.ua %>'
+			);
+		</script>
+		<!-- End Google Tag Manager -->
+	</head>
+
+	<body style="margin: 0; padding: 0;">
+		<!-- Google Tag Manager (noscript) -->
+		<noscript>
+			<iframe
+				src="https://www.googletagmanager.com/ns.html?id=<%= htmlWebpackPlugin.options.ua %>"
+				height="0"
+				width="0"
+				style="display:none;visibility:hidden"
+			></iframe>
+		</noscript>
+		<!-- End Google Tag Manager (noscript) -->
+
+		<noscript id="browser-not-supported">
+			<%=
+			require(`html-loader?minimize=true!../src/projects/${htmlWebpackPlugin.options.projectId}/public/_browser-support.html`)
+			%>
+		</noscript>
+
+		<%=
+		require(`html-loader?minimize=true!../src/projects/${htmlWebpackPlugin.options.projectId}/public/_splash.html`)
+		%>
+
+		<main id="vuesoma"></main>
+
+		<%= require(`html-loader?minimize=true!./_fastboot.html`) %>
+
+		<script>
+			function showBrowserIsNotSupported() {
+				var notSupporterContainer = document.getElementById(
+					'browser-not-supported'
+				);
+				var container = document.createElement('div');
+				container.innerHTML = notSupporterContainer.innerText;
+				notSupporterContainer.parentNode.replaceChild(
+					container,
+					notSupporterContainer
+				);
+			}
+
+			try {
+				var modernBrowser = ('fetch' in window && 'assign' in Object && 'finally' in Promise.prototype);
+
+				if (modernBrowser) {
+					FastBoot({
+						mode: '<%= NODE_ENV %>',
+						JSFiles: <%= JSON.stringify(htmlWebpackPlugin.files.js) %>,
+						CSSFiles: <%= JSON.stringify(htmlWebpackPlugin.files.css) %>,
+					});
+				} else {
+					throw new Error('browser is not supported');
+				}
+			} catch (error) {
+				showBrowserIsNotSupported();
+			}
+		</script>
+
+		<!-- built files will be auto injected -->
+	</body>
+</html>

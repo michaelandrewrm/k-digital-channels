@@ -1,0 +1,76 @@
+<style>
+	.browser-support {
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		justify-content: center;
+		align-items: center;
+		padding: 24px;
+		background: linear-gradient(to bottom, #235368, #436c7e 22%, #0f3356);
+		z-index: 9999;
+		font-family: Arial;
+		box-sizing: border-box;
+	}
+	.browser-support__content {
+		max-width: 320px;
+		color: #ffffff;
+		text-align: center;
+		padding-top: 150px;
+		margin: 0 auto;
+	}
+	.browser-support__content .browser-support__icon {
+		color: #98f6dc;
+		margin-bottom: 10px;
+		font-size: 35px;
+	}
+	.browser-support__title {
+		margin-bottom: 30px;
+		font-size: 20px;
+		font-weight: 600;
+		outline: none;
+	}
+	.browser-support__desc {
+		font-size: 12px;
+		font-weight: 100;
+		line-height: 1.4;
+		outline: none;
+	}
+	.browser-support__icon {
+		display: inline-block;
+		width: 1em;
+		overflow: visible;
+		flex-shrink: 0;
+	}
+	.browser-support__icon-svg {
+		display: block;
+	}
+	.browser-support__icon-path {
+		color: inherit;
+		fill: currentColor;
+	}
+</style>
+
+<div class="browser-support">
+	<div class="browser-support__content">
+		<i class="browser-support__icon" style="height: 1.0303em;" tabindex="-1">
+			<svg viewBox="0 0 33 34" class="browser-support__icon-svg" alt="">
+				<path
+					d="M30.74 4c1.2 0 2.22 1 2.26 2.2v23.6c0 1.2-1 2.2-2.22 2.2H2.22C1 32 0 31 0 29.8V6.2C0 5 1 4 2.22 4zm-.14 8.5H2.4v17.1h28.2V12.5zm-10.5 4.45c.46.46.46 1.2 0 1.66l-1.94 1.94 1.93 1.93c.46.46.46 1.2 0 1.66h0c-.46.46-1.2.46-1.66 0L16.5 22.2l-1.94 1.94c-.46.46-1.2.46-1.66 0s-.46-1.2 0-1.66l1.94-1.94-1.93-1.93c-.46-.46-.46-1.2 0-1.66h0c.46-.46 1.2-.46 1.66 0l1.93 1.93 1.94-1.94c.46-.46 1.2-.46 1.66 0zm-8.9-9.8c-.62 0-1.1.48-1.1 1.1s.5 1.1 1.1 1.1 1.1-.48 1.1-1.1-.48-1.1-1.1-1.1zm-3.7 0c-.62 0-1.1.48-1.1 1.1s.5 1.1 1.1 1.1 1.1-.48 1.1-1.1-.48-1.1-1.1-1.1zm-3.7 0c-.62 0-1.1.48-1.1 1.1s.5 1.1 1.1 1.1 1.1-.48 1.1-1.1-.5-1.1-1.1-1.1zm24.57.24H22.7c-.5 0-.87.38-.87.86s.38.86.87.86h5.66c.5 0 .87-.38.87-.86s-.38-.86-.87-.86z"
+					class="browser-support__icon-path"
+				></path>
+			</svg>
+		</i>
+		<h1 class="browser-support__title text-xxl-medium">
+			Tu navegador no está soportado
+		</h1>
+		<p class="browser-support__desc text-l-book">
+			Tu navegador no puede acceder a esta página web. Te aconsejamos
+			actualizarlo o cambiar de navegador e intentar de nuevo.
+		</p>
+	</div>
+</div>

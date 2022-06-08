@@ -1,0 +1,257 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`v-customer-online.vue should match snapshot 1`] = `
+<l-page-stub
+  closable="true"
+>
+  <h1
+    tabindex="-1"
+  >
+    Banca a distancia
+  </h1>
+   
+  <section
+    class="v-customer-online__content"
+  >
+    <div
+      class="v-customer-online__card"
+    >
+      <h2
+        class="v-customer-online__title text-l-medium"
+      >
+        
+				Contact Center
+			
+      </h2>
+       
+      <p
+        class="v-customer-online__description text-m-book"
+      >
+        
+				De Lunes a Viernes de 08:30h a 20:00h.
+Sábados de 09:00h a 14:00h
+			
+      </p>
+       
+      <div
+        class="v-customer-online__icon-text"
+      >
+        <c-icon-stub
+          size="s"
+          src="@icons/phone"
+        />
+         
+        <span
+          class="text-m-book"
+        >
+          900 107 411 / 91 310 95 50
+        </span>
+      </div>
+    </div>
+     
+    <h2
+      class="v-customer-online__interest-phones text-xl-light"
+    >
+      
+			Teléfonos de interés
+		
+    </h2>
+     
+    <div
+      class="v-customer-online__card-group"
+    >
+      <div
+        class="v-customer-online__card"
+      >
+        <h2
+          class="v-customer-online__title text-l-medium"
+        >
+          
+					Banca Empresas
+				
+        </h2>
+         
+        <div
+          class="v-customer-online__icon-text"
+        >
+          <c-icon-stub
+            size="s"
+            src="@icons/phone"
+          />
+           
+          <span
+            class="text-m-book"
+          >
+            91 319 10 73
+          </span>
+        </div>
+      </div>
+       
+      <div
+        class="v-customer-online__card"
+      >
+        <h2
+          class="v-customer-online__title text-l-medium"
+        >
+          
+					Banca Privada
+				
+        </h2>
+         
+        <div
+          class="v-customer-online__icon-text"
+        >
+          <c-icon-stub
+            size="s"
+            src="@icons/phone"
+          />
+           
+          <span
+            class="text-m-book"
+          >
+            91 310 96 77
+          </span>
+        </div>
+      </div>
+       
+      <div
+        class="v-customer-online__card"
+      >
+        <h2
+          class="v-customer-online__title text-l-medium"
+        >
+          
+					Banca Partner
+				
+        </h2>
+         
+        <div
+          class="v-customer-online__icon-text"
+        >
+          <c-icon-stub
+            size="s"
+            src="@icons/phone"
+          />
+           
+          <span
+            class="text-m-book"
+          >
+            91 310 81 58
+          </span>
+        </div>
+      </div>
+       
+      <div
+        class="v-customer-online__card"
+      >
+        <h2
+          class="v-customer-online__title text-l-medium"
+        >
+          
+					FAM Caminos
+				
+        </h2>
+         
+        <div
+          class="v-customer-online__icon-text"
+        >
+          <c-icon-stub
+            size="s"
+            src="@icons/phone"
+          />
+           
+          <span
+            class="text-m-book"
+          >
+            900 107 901 / 91 308 64 28
+          </span>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="v-customer-online__card"
+    >
+      <h2
+        class="v-customer-online__title text-l-medium"
+      >
+        
+				Área Internacional
+			
+      </h2>
+       
+      <p
+        class="v-customer-online__description text-m-book"
+      >
+        
+				De Lunes a Viernes de 08:30h a 20:00h GMT (+1). 
+Sábados de 09:00h a 14:00h GMT (+1)
+			
+      </p>
+       
+      <div
+        class="v-customer-online__icon-text"
+      >
+        <c-icon-stub
+          size="s"
+          src="@icons/phone"
+        />
+         
+        <span
+          class="text-m-book"
+        >
+          660 933 126 / +34 91 310 95 50
+        </span>
+      </div>
+       
+      <div
+        class="v-customer-online__icon-text"
+      >
+        <c-icon-stub
+          size="s"
+          src="@icons/mail"
+        />
+         
+        <span
+          class="text-m-book"
+        >
+          expatriados@bancocaminos.es
+        </span>
+      </div>
+       
+      <p
+        class="text-m-book"
+      >
+        Skype: internacionalbancocaminos
+      </p>
+    </div>
+     
+    <div
+      class="v-customer-online__card"
+    >
+      <h2
+        class="v-customer-online__title text-l-medium"
+      >
+        
+				Teléfono 24h Robo / Extravío de tarjetas
+			
+      </h2>
+       
+      <div
+        class="v-customer-online__icon-text"
+      >
+        <c-icon-stub
+          size="s"
+          src="@icons/phone"
+        />
+         
+        <span
+          class="text-m-book"
+        >
+          (+34) 91 310 95 51
+        </span>
+      </div>
+    </div>
+  </section>
+</l-page-stub>
+`;
