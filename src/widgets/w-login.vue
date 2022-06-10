@@ -4,7 +4,8 @@
 			<h1 v-a11y-hide ref="introTitle">{{ $t('INTRO_LOGIN_TITLE') }}</h1>
 			<!-- Identity logotype starts -->
 			<div class="w-login-header" :class="{ 'w-login-header--collapse': collapseHeader }">
-				<img src="@local-assets/img/logo-alt.svg" alt aria-hidden="true" />
+				<!-- <img src="@local-assets/img/logo-alt.svg" alt aria-hidden="true" /> -->
+				<c-icon src="@icons/hands" class="w-login-header__icon-logo" />
 			</div>
 			<!-- Identity logotype ends -->
 
@@ -551,6 +552,11 @@ form {
 	transform: translateY(0px);
 	transition: transform $animation-duration ease-in;
 	flex-grow: 1;
+}
+
+.w-login-header__icon-logo {
+	width: 150px;
+	color: white;
 }
 
 .wl-checkbox {

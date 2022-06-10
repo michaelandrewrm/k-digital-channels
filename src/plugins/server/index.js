@@ -1,9 +1,6 @@
 import { Server, Model, Response, belongsTo, hasMany } from 'miragejs';
 import IdentityManager from './identity-manager';
 import seeds from './seeds';
-import AgentLogin from './mock-agent-login';
-import AgentUsers from './mock-agent-users';
-import AgentImpersonations from './mock-agent-impersonations';
 import Login from './mock-login';
 import KeyExchange from './mock-key-exchange';
 import AssociateUuids from './mock-associate-uuids';
@@ -157,12 +154,6 @@ export function makeServer({ environment = 'development' } = {}) {
 			this.post('/key-exchange', KeyExchange.bind(this));
 			this.post('/associate-uuids', AssociateUuids.bind(this));
 			this.post('/login', Login.bind(this));
-			this.post('/assisted-channels/login', AgentLogin.bind(this));
-			this.get('/assisted-channels/users', AgentUsers.bind(this));
-			this.patch('/assisted-channels/users/:action', AgentUsers.bind(this));
-			this.patch('/assisted-channels/users/:userId/:action', AgentUsers.bind(this));
-			this.post('/assisted-channels/users/:action', AgentUsers.bind(this));
-			this.post('/assisted-channels/impersonations', AgentImpersonations.bind(this));
 			this.put('/current/user/password', UserPassword.bind(this));
 			this.post('/users/password', UserPassword.bind(this));
 			this.put('/users/password', UserPassword.bind(this));

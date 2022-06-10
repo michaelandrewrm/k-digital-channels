@@ -52,6 +52,7 @@ export default Factory.extend({
 	},
 	'checking-account': trait(balanceGenerator),
 	'account': trait(balanceGenerator),
+	'remittance': trait(balanceGenerator),
 	'currency-account': trait({}),
 	'junior-account': trait(balanceGenerator),
 	'support-account': trait(balanceGenerator),

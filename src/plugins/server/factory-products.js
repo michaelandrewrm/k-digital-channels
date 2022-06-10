@@ -64,6 +64,16 @@ export default Factory.extend({
 		hasWithholdings: () => faker.datatype.boolean(),
 	}),
 
+	remittance: trait({
+		name: 'Remesas',
+		alias: 'Remesas',
+		bic: () => faker.finance.bic(),
+		productType: { id: '17', name: 'Cuentas' },
+		productSubtype: { id: '44', name: 'Remesas' },
+		productNumber: IBAN,
+		hasWithholdings: () => faker.datatype.boolean(),
+	}),
+
 	premiumAccount: trait({
 		name: 'Cuenta PREMIUM',
 		alias: 'Cuenta PREMIUM',
