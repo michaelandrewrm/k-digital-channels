@@ -56,6 +56,7 @@ const def = {
 	'38': 'investment-pension-plan',
 	'39': 'managed-rsi-account',
 	'40': 'managed-rsi-currency-account',
+	'44': 'remittance',
 	's-01': 'managed-rsi-portfolio',
 	'm-01': 'managed-account',
 	'm-03': 'managed-currency-account',

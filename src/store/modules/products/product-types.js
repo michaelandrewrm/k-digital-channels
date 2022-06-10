@@ -28,6 +28,7 @@ const def = {
 	'14': 'service',
 	'15': 'managed-portfolio',
 	'16': 'pending-movements',
+	'17': 'remittance',
 	's-01': 'managed-rsi-portfolio',
 };
 

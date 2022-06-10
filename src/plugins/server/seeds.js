@@ -81,6 +81,7 @@ export default function(server) {
 			...server.createList('product', 1, 'investmentAccountRTO', {
 				assets: () => server.createList('asset', 4, 'investment-account-rto'),
 			}),
+			...server.createList('product', 1, 'remittance'),
 		],
 		transfers: [
 			...server.createList('transfer', 10),
