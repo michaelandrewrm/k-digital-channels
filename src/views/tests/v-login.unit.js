@@ -14,7 +14,7 @@ describe('v-login.vue', () => {
 
 	const getAnnouncements = jest.fn().mockResolvedValue([{ id: 1 }, { id: 2 }]);
 	const open = jest.fn().mockResolvedValue(true);
-	const skipNews = jest.fn().mockResolvedValue(true);
+	const setNewsId = jest.fn().mockResolvedValue(true);
 	const loginAnonymous = jest.fn().mockResolvedValue();
 
 	beforeEach(() => {
@@ -25,14 +25,14 @@ describe('v-login.vue', () => {
 
 		store.mockModule('communications', { getAnnouncements });
 		store.mockModule('modal', { open });
-		store.mockModule('session', { skipNews });
+		store.mockModule('session', { setNewsId });
 		store.registerModule('authn', {
 			namespaced: true,
 			state: { isEmbedded: false },
 			actions: { loginAnonymous },
 		});
 
-		Object.assign(actions, { getAnnouncements, open, skipNews });
+		Object.assign(actions, { getAnnouncements, open, setNewsId });
 
 		wp = shallowMount(Component, { localVue, store, router });
 	});

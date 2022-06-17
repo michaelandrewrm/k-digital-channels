@@ -20,7 +20,7 @@ export const USER_WILL_BE_PERMANENTLY_BLOCKED = 'C401000204';
 export const USER_WAS_PERMANENTLY_BLOCKED = 'C401000205';
 
 // El token de usuario recordado no es válido o lo era pero ha caducado.
-export const REMEMBER_TOKEN_INVALID = 'C401000207';
+export const INVALID_REMEMBER_TOKEN = 'C401000207';
 
 // La petición no es válida porque requiere subida de nivel se la sesión.
 export const SCA_REQUIRED = 'C403000003';

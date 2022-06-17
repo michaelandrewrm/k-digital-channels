@@ -10,7 +10,7 @@ import {
 	USER_WILL_BE_PERMANENTLY_BLOCKED,
 	USER_WAS_PERMANENTLY_BLOCKED,
 	OTP_REQUIRED,
-	REMEMBER_TOKEN_INVALID,
+	INVALID_REMEMBER_TOKEN,
 	REQUEST_TIMEOUT,
 	USER_NOT_FOUND,
 } from '@modules/service/constants';
@@ -253,7 +253,7 @@ describe('m-error-handler', () => {
 		expect(modules.session.actions.removeUserSession).not.toHaveBeenCalled();
 
 		await store.dispatch('error/handle', {
-			error: { response: { data: { errorCode: REMEMBER_TOKEN_INVALID } } },
+			error: { response: { data: { errorCode: INVALID_REMEMBER_TOKEN } } },
 		});
 
 		expect(modules.session.actions.removeUserSession).toHaveBeenCalled();

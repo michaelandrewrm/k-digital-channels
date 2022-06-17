@@ -5,12 +5,12 @@ const SET_THEME = 'SET_THEME';
 const CHANGE_LANGUAGE = 'CHANGE_LANGUAGE';
 const SET_REMEMBER_TOKEN = 'SET_REMEMBER_TOKEN';
 const REMOVE_REMEMBER_TOKEN = 'REMOVE_REMEMBER_TOKEN';
-const SKIP_NEWS = 'SKIP_NEWS';
+const SET_NEWS_ID = 'SET_NEWS_ID';
 
-const USER_SESSION_KEY = 'userSession';
-const THEME_SESSION_KEY = 'themeSession';
-const LANG_SESSION_KEY = 'langSession';
-const NEWS_SESSION_KEY = 'newsSession';
+const STORAGE_USER_SESSION = 'userSession';
+const STORAGE_THEME = 'themeSession';
+const STORAGE_LANG = 'langSession';
+const STORAGE_NEWS_ID = 'newsSession';
 
 export default {
 	namespaced: true,
@@ -25,10 +25,10 @@ export default {
 	 * @property {String} lang User's language preference.
 	 */
 	state() {
-		const userSession = JSON.parse(localStorage.getItem(USER_SESSION_KEY)) || {};
-		const themeSession = JSON.parse(localStorage.getItem(THEME_SESSION_KEY)) || {};
-		const langSession = JSON.parse(localStorage.getItem(LANG_SESSION_KEY)) || {};
-		const newsSession = localStorage.getItem(NEWS_SESSION_KEY) || '';
+		const userSession = JSON.parse(localStorage.getItem(STORAGE_USER_SESSION)) || {};
+		const themeSession = JSON.parse(localStorage.getItem(STORAGE_THEME)) || {};
+		const langSession = JSON.parse(localStorage.getItem(STORAGE_LANG)) || {};
+		const newsSession = localStorage.getItem(STORAGE_NEWS_ID) || '';
 
 		const { userName = '', lastLogin = null, rememberToken = '' } = userSession;
 		const {
@@ -37,7 +37,7 @@ export default {
 
 		const { lang = 'es' } = langSession;
 
-		const skippedNews = newsSession;
+		const newsId = newsSession;
 
 		return {
 			userGreeted: false,
@@ -46,44 +46,25 @@ export default {
 			rememberToken,
 			theme,
 			lang,
-			skippedNews,
+			newsId,
 		};
 	},
 
 	mutations: {
-		/**
-		 * Set the user session data.
-		 * @param {state} state
-		 * @param {Object} payload
-		 * @param {Object} payload.data
-		 */
 		[SET_USER_SESSION](state, data) {
 			state.userName = data.userName;
 			state.lastLogin = data.lastLogin;
 		},
 
-		/**
-		 * Set remember token
-		 * @param {state} state
-		 * @param {String} data token
-		 */
 		[SET_REMEMBER_TOKEN](state, data) {
 			state.rememberToken = data;
 		},
 
-		/**
-		 * Remove the user session data.
-		 * @param {state} state
-		 */
 		[REMOVE_USER_SESSION](state) {
 			state.userName = '';
 			state.lastLogin = null;
 		},
 
-		/**
-		 * Remove remember token
-		 * @param {state} state
-		 */
 		[REMOVE_REMEMBER_TOKEN](state) {
 			state.rememberToken = null;
 		},
@@ -100,59 +81,39 @@ export default {
 			state.lang = value;
 		},
 
-		[SKIP_NEWS](state, value) {
-			state.skippedNews = value;
+		[SET_NEWS_ID](state, value) {
+			state.newsId = value;
 		},
 	},
 
 	actions: {
-		/**
-		 * Save the user session info.
-		 * @param {Object} store
-		 * @param {Object} sessionData
-		 */
 		setUserSession({ commit }, sessionData) {
 			commit(SET_USER_SESSION, sessionData);
 			commit(SET_USER_GREETED, false);
 		},
 
-		/**
-		 * Save and persist current session info.
-		 * @param {Object} store
-		 * @param {Object} sessionData
-		 */
 		rememberUserSession({ commit }, { userName, lastLogin, rememberToken }) {
 			commit(SET_USER_SESSION, { userName, lastLogin });
 			commit(SET_REMEMBER_TOKEN, rememberToken);
 
 			localStorage.setItem(
-				USER_SESSION_KEY,
+				STORAGE_USER_SESSION,
 				JSON.stringify({ userName, lastLogin, rememberToken })
 			);
 		},
 
-		/**
-		 * Close current session.
-		 * @param {Object} store
-		 */
 		removeUserSession({ commit }) {
 			commit(REMOVE_USER_SESSION);
 			commit(REMOVE_REMEMBER_TOKEN);
 			sessionStorage.removeItem('secure');
 		},
 
-		/**
-		 * Remove persisted session info.
-		 */
 		forgetUserSession() {
-			localStorage.removeItem(USER_SESSION_KEY);
+			localStorage.removeItem(STORAGE_USER_SESSION);
 		},
 
-		/**
-		 * Reload user persisted info.
-		 */
 		loadUserSession({ commit }) {
-			const userSession = JSON.parse(localStorage.getItem(USER_SESSION_KEY)) || {};
+			const userSession = JSON.parse(localStorage.getItem(STORAGE_USER_SESSION)) || {};
 			const { userName = '', lastLogin = null, rememberToken = '' } = userSession;
 
 			commit(SET_USER_SESSION, { userName, lastLogin });
@@ -163,31 +124,19 @@ export default {
 			commit(SET_USER_GREETED, true);
 		},
 
-		/**
-		 * Change and persist visual theme.
-		 *
-		 * @param {Object} store
-		 * @param {"light"|"dark"} theme
-		 */
 		setTheme({ commit }, theme) {
 			commit(SET_THEME, theme);
-			localStorage.setItem(THEME_SESSION_KEY, JSON.stringify({ theme }));
+			localStorage.setItem(STORAGE_THEME, JSON.stringify({ theme }));
 		},
 
-		/**
-		 * Change and persist user language.
-		 *
-		 * @param {Object} store
-		 * @param {String} lang
-		 */
 		changeLanguage({ commit }, lang) {
 			commit(CHANGE_LANGUAGE, lang);
-			localStorage.setItem(LANG_SESSION_KEY, JSON.stringify({ lang }));
+			localStorage.setItem(STORAGE_LANG, JSON.stringify({ lang }));
 		},
 
-		skipNews({ commit }, version) {
-			commit(SKIP_NEWS, version);
-			localStorage.setItem(NEWS_SESSION_KEY, version);
+		setNewsId({ commit }, id) {
+			commit(SET_NEWS_ID, id);
+			localStorage.setItem(STORAGE_NEWS_ID, id);
 		},
 
 		deleteSession({ dispatch }) {

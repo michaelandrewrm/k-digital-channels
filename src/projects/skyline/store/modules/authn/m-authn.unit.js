@@ -1,5 +1,5 @@
 import flushPromises from 'flush-promises';
-import { USER_INVALID_CRED, REMEMBER_TOKEN_INVALID } from '@modules/service/constants';
+import { USER_INVALID_CRED, INVALID_REMEMBER_TOKEN } from '@modules/service/constants';
 import authn from './m-authn';
 
 const newInstance = createPristineVue();
@@ -185,7 +185,7 @@ describe('m-authn', () => {
 	it('should reject a reason for invalid remember tokens', async () => {
 		const requestAction = jest
 			.fn()
-			.mockResolvedValue({ data: { errorCode: REMEMBER_TOKEN_INVALID } });
+			.mockResolvedValue({ data: { errorCode: INVALID_REMEMBER_TOKEN } });
 
 		store.mockModule('service', { request: requestAction });
 

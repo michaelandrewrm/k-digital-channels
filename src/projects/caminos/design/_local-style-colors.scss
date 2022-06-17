@@ -8,9 +8,9 @@
 	--color-primary-light: #{toRGB(#32516c)};
 	--color-primary-dark: #{toRGB(#001825)};
 
-	--color-secondary: #{toRGB(#6bccb1)};
-	--color-secondary-light: #{toRGB(#98f6dc)};
-	--color-secondary-dark: #{toRGB(#369c83)};
+	--color-secondary: #{toRGB(#00FFC8)};
+	--color-secondary-light: #{toRGB(#66FFDE)};
+	--color-secondary-dark: #{toRGB(#009978)};
 
 	--color-accent-error: #{toRGB(#fb5f58)};
 	--color-accent-success: #{toRGB(#5fa85d)};
@@ -41,9 +41,10 @@
 
 	--color-text-primary: #{toRGB(#002941)};
 	--color-text-primary-light: #{toRGB(#ffffff)};
-	--color-text-secondary: #{toRGB(#6bccb1)};
-	--color-text-secondary-light: #{toRGB(#98f6dc)};
-	--color-text-secondary-dark: #{toRGB(#369c83)};
+	--color-text-primary-dark: #{toRGB(#ffffff)};
+	--color-text-secondary: #{toRGB(#00FFC8)};
+	--color-text-secondary-light: #{toRGB(#66FFDE)};
+	--color-text-secondary-dark: #{toRGB(#009978)};
 	--color-text-error: #{toRGB(#fb5f58)};
 	--color-text-accent: #{toRGB(#5987a4)};
 
@@ -64,7 +65,12 @@
 		RGB(var(--color-primary))
 	);
 
-	--color-gradient-login: linear-gradient(to bottom, #043e60, #001827);
+	--color-gradient-login: linear-gradient(
+		to bottom,
+		RGB(var(--color-primary-light)),
+		RGB(var(--color-primary)),
+		RGB(var(--color-primary-dark))
+	);
 	--color-gradient-login-aside: linear-gradient(to bottom, #01263b, #001827);
 
 	--color-gradient-menu: linear-gradient(to bottom, #043e60, #001827);

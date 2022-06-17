@@ -1,4 +1,3 @@
-import serviceLogin from '@services/s-login';
 import modalLogout from '@modals/m-logout';
 import modalExpired from '@modals/m-expired-session';
 import {
@@ -7,13 +6,12 @@ import {
 	USER_WILL_BE_TEMP_BLOCKED,
 	USER_WAS_TEMP_BLOCKED,
 	USER_WILL_BE_PERMANENTLY_BLOCKED,
-	REMEMBER_TOKEN_INVALID,
+	INVALID_REMEMBER_TOKEN,
 } from '@modules/service/constants';
 
 const iconURL = require('@project/public/icons/pwaIcon.png');
 
 const SET_LOGGED_IN = 'SET_LOGGED_IN';
-const SET_IS_EMBEDDED = 'SET_IS_EMBEDDED';
 const SET_IS_MULTIPLE = 'SET_IS_MULTIPLE';
 
 export default {
@@ -22,7 +20,6 @@ export default {
 	state() {
 		return {
 			loggedIn: false,
-			isEmbedded: false,
 			isMultiple: false,
 		};
 	},
@@ -32,101 +29,58 @@ export default {
 			state.loggedIn = value;
 		},
 
-		/* istanbul ignore next */
-		[SET_IS_EMBEDDED](state, value) {
-			state.isEmbedded = value;
-		},
-
 		[SET_IS_MULTIPLE](state, value) {
 			state.isMultiple = value;
 		},
 	},
 
 	actions: {
-		/**
-		 * LogIn an user with the username and password.
-		 *
-		 * @param store
-		 * @param {Object} payload
-		 * @param {String} payload.rememberToken Token
-		 * @param {String} payload.username Username
-		 * @param {String} payload.password Password
-		 */
 		async login({ commit, dispatch, rootState }, { rememberToken, username, password }) {
 			await dispatch('secure/createSession', null, { root: true });
 			dispatch('contracts/reset', null, { root: true });
 			dispatch('loading/start', null, { root: true });
 
+			const url = '/login';
+			const method = 'POST';
+			const { companyId } = rootState.app;
+			const deviceId = rootState.device.id;
+			const isUserRemember = Boolean(rememberToken);
+
+			const credentials = {
+				rememberToken,
+				documentId: username,
+				password,
+				companyId,
+				channel: 'WEB',
+				deviceId,
+			};
+
 			return new Promise((resolve, reject) => {
-				const { companyId } = rootState.app;
-				let loginMethod;
-				let loginValue;
-
-				if (rememberToken && !username) {
-					loginMethod = 'rememberToken';
-					loginValue = rememberToken;
-				} else {
-					loginMethod = 'documentId';
-					loginValue = username;
-				}
-
-				const credentials = {
-					[loginMethod]: loginValue,
-					password,
-					companyId,
-					channel: 'WEB',
-					deviceId: rootState.device.id,
-				};
-
-				const reasons = {
-					BAD_CREDENTIALS: 1 << 0,
-					BAD_PASSWORD: 1 << 1,
-					BAD_USER: 1 << 2,
-				};
-
 				dispatch(
 					'service/request',
 					{
-						service: serviceLogin,
+						service: { request: { url, method } },
 						payload: credentials,
 					},
 					{ root: true }
 				)
-					.then(async ({ data }) => {
-						if (data.requirePwdChange) {
-							const MPasswordChange = await import(
-								/* webpackChunkName: "chunk-m-password-change" */ '@modals/m-password-change'
-							);
-							const pwdChangeResponse = await dispatch(
-								'modal/open',
-								{ component: MPasswordChange },
-								{ root: true }
-							);
-
-							/* istanbul ignore else */
-							if (pwdChangeResponse !== true) {
-								throw pwdChangeResponse;
-							}
-						}
-
-						await dispatch('getContracts', { data: { username: data?.username } });
-
-						resolve({ ...data, [loginMethod]: loginValue });
+					.then(({ data }) => {
+						return dispatch('getContracts', { data: { username: data?.username } }).then(() =>
+							resolve({ ...data, isUserRemember })
+						);
 					})
 					.catch((error) => {
 						dispatch('loading/end', null, { root: true });
 
-						const reason = { ...reasons };
-						const { data = {} } = error?.response ?? {};
+						const { data } = error?.response;
+						let status = 'BAD_CREDENTIALS';
 
-						reason.status = reasons.BAD_PASSWORD;
-
-						if (data.errorCode === 'CHANGE_USER') {
-							reason.status = reasons.BAD_USER;
+						if (data?.errorCode === 'CHANGE_USER') {
+							status = 'BAD_USER';
 						}
 
-						if (data.errorCode === REMEMBER_TOKEN_INVALID) {
-							reason.status = reasons.BAD_USER | reasons.BAD_CREDENTIALS;
+						if (data.errorCode === INVALID_REMEMBER_TOKEN) {
+							status = 'BAD_CREDENTIALS';
 						}
 
 						if (
@@ -136,11 +90,12 @@ export default {
 							data.errorCode === USER_WAS_TEMP_BLOCKED ||
 							data.errorCode === USER_WILL_BE_PERMANENTLY_BLOCKED
 						) {
-							reason.status |= reasons.BAD_CREDENTIALS;
+							status = 'BAD_CREDENTIALS';
 						}
 
 						commit(SET_LOGGED_IN, false);
-						reject(reason);
+						// eslint-disable-next-line prefer-promise-reject-errors
+						reject({ ...error, status });
 					});
 			});
 		},
@@ -169,21 +124,6 @@ export default {
 						return Promise.reject(error);
 					}
 				);
-		},
-
-		loginAnonymous({ dispatch, rootState }) {
-			return dispatch(
-				'service/request',
-				{
-					service: serviceLogin,
-					payload: {
-						companyId: rootState.app.companyId,
-						deviceId: rootState.device.id,
-						channel: 'WEB',
-					},
-				},
-				{ root: true }
-			);
 		},
 
 		async logout({ state, rootState, commit, dispatch }) {
@@ -299,11 +239,6 @@ export default {
 
 			commit(SET_IS_MULTIPLE, isMultiple);
 			commit(SET_LOGGED_IN, true);
-		},
-
-		/* istanbul ignore next */
-		setIsEmbedded({ commit }) {
-			commit(SET_IS_EMBEDDED, true);
 		},
 
 		/**

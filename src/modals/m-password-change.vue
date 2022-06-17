@@ -11,7 +11,6 @@
 				ref="passwordChangeWidget"
 				class="m-password-change__widget"
 				@valid="isValidNewPassword = $event"
-				@submit="submit"
 			/>
 		</article>
 

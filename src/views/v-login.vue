@@ -1,27 +1,19 @@
 <template>
 	<div class="v-login" data-theme="light">
-		<h1 v-a11y-hide ref="welcomeTitle">{{ $t('WELCOME', { project: $t('TITLE') }) }}</h1>
-
 		<l-login>
-			<w-login
-				ref="widgetLogin"
-				v-show="shouldShowContent"
-				:visible="shouldShowContent"
-				:isPasswordRecoveryOpened="isPasswordRecoveryOpened"
-				@open-password-recovery="openPasswordRecovery"
-				slot="default"
-			/>
+			<div class="v-login__form" slot="default">
+				<w-login v-show="shouldShowContent" />
+			</div>
 
-			<w-carousel
-				slot="aside"
-				v-if="shouldShowCarousel"
-				ref="widgetCarousel"
-				:title="$t('NEWS')"
-				:slides="slides"
-				:skipable="!isDesktop"
-				:navigable="(isTablet && !isDesktop) || isBigScreens"
-				@skip-carousel="skipCarousel"
-			/>
+			<div v-if="shouldShowCarousel" class="v-login__carousel" slot="aside">
+				<w-carousel
+					:title="$t('LOGIN.NEWS')"
+					:slides="slides"
+					:skipable="!isDesktop"
+					:navigable="(isTablet && !isDesktop) || isBigScreens"
+					@skip-carousel="setNewsId"
+				/>
+			</div>
 		</l-login>
 	</div>
 </template>
@@ -34,17 +26,9 @@ import LLogin from '@layouts/l-login';
 import WLogin from '@widgets/w-login';
 import WCarousel from '@widgets/w-carousel';
 import MAcceptCookies from '@modals/m-accept-cookies';
-import MPasswordRecovery from '@modals/m-password-recovery';
-import MSomethingWrong from '@modals/m-something-wrong';
 import communicationsModule from '@modules/communications/m-communications';
 
 const COOKIE_CONSENT = 'cookieconsent_status';
-
-/**
- * We have to adapt this view when we modify the layouts,
- * this means that the button register binded method must be changed,
- * The actual solution to hide the register button is NOT the final solution
- */
 
 export default {
 	name: 'v-login',
@@ -62,7 +46,7 @@ export default {
 	data() {
 		return {
 			slides: [],
-			carouselSkipped: false,
+			isNewsSkipped: false,
 			showCookies: false,
 			isPasswordRecoveryOpened: false,
 		};
@@ -74,23 +58,24 @@ export default {
 		isBigScreens: mq(onBigScreens),
 		isSmallHeight: mq('(max-height: 800px)'),
 		...mapState('authn', ['isEmbedded']),
+		...mapState('session', ['newsId']),
 
-		shouldShowContent({ isDesktop, slides, carouselSkipped }) {
-			return !slides.length || carouselSkipped || isDesktop;
+		shouldShowContent({ slides, isNewsSkipped, isDesktop }) {
+			return !slides?.length || isNewsSkipped || isDesktop;
 		},
 
-		shouldShowCarousel({ isDesktop, slides, carouselSkipped }) {
-			return slides.length > 0 && (isDesktop || !carouselSkipped);
+		shouldShowCarousel({ slides, isNewsSkipped, isDesktop }) {
+			return slides?.length && (isDesktop || !isNewsSkipped);
 		},
 	},
 
 	methods: {
-		skipCarousel() {
-			this.carouselSkipped = true;
-			this.$store.dispatch('session/skipNews', this.slides[0]?.id);
-			this.$nextTick(() => {
-				this.$refs.widgetLogin.focus();
-			});
+		setNewsId() {
+			const [slide] = this.slides;
+			const slideId = slide?.id;
+
+			this.isNewsSkipped = true;
+			this.$store.dispatch('session/setNewsId', slideId);
 		},
 
 		getCookie(name) {
@@ -109,18 +94,13 @@ export default {
 			this.showCookies = false;
 		},
 
-		openPasswordRecovery() {
-			this.isPasswordRecoveryOpened = true;
+		async getAnnouncements() {
+			this.slides = await this.$store.dispatch('communications/getAnnouncements', 'prelogin');
+			const [slide] = this.slides;
+			const slideId = slide?.id;
+			this.isNewsSkipped = slideId === this.newsId;
 
-			const { dispatch } = this.$store;
-
-			dispatch('authn/loginAnonymous')
-				.then(() => dispatch('loading/start'))
-				.then(() => dispatch('modal/open', MPasswordRecovery))
-				.catch(() => dispatch('modal/open', MSomethingWrong).then(() => dispatch('loading/end')))
-				.finally(() => {
-					this.isPasswordRecoveryOpened = false;
-				});
+			window.dispatchEvent(new Event('ready-for-action'));
 		},
 	},
 
@@ -140,46 +120,9 @@ export default {
 		},
 	},
 
-	beforeRouteEnter(to, from, next) {
-		next((vm) => {
-			if (vm.isEmbedded && window.parent && from.name === 'global') {
-				window.parent.postMessage({ name: 'hide-frame' }, '*');
-			}
-
-			if (to?.name === 'login' && to?.query?.action === 'pwd-recovery') {
-				vm.$store.dispatch('loading/start');
-			}
-		});
-	},
-
 	created() {
-		this.$store
-			.dispatch('communications/getAnnouncements', 'prelogin')
-			.then((items) => {
-				this.slides = items;
-			})
-			.catch(() => {})
-			.finally(() => {
-				this.carouselSkipped = this.slides[0]?.id === this.$store.state.session.skippedNews;
-				window.dispatchEvent(new Event('ready-for-action'));
-
-				const { name, query } = this.$route;
-
-				if (name === 'login' && query?.action === 'pwd-recovery') {
-					this.openPasswordRecovery();
-				}
-			});
-
-		/* istanbul ignore else */
-		if (!this.isEmbedded) {
-			this.showCookies = this.getCookie(COOKIE_CONSENT) !== 'dismiss';
-		}
-	},
-
-	mounted() {
-		this.$nextTick(() => {
-			this.$refs.welcomeTitle.focus();
-		});
+		this.getAnnouncements();
+		this.showCookies = this.getCookie(COOKIE_CONSENT) !== 'dismiss';
 	},
 };
 </script>
@@ -188,5 +131,16 @@ export default {
 .v-login {
 	width: 100%;
 	height: 100%;
+}
+
+.v-login__form {
+	width: 100%;
+	max-width: 320px;
+	padding: 20px;
+}
+
+.v-login__carousel {
+	width: 100%;
+	padding: 20px;
 }
 </style>

@@ -73,8 +73,8 @@ describe('m-session', () => {
 
 	it('should skip the news', () => {
 		const version = 'abc-123';
-		store.dispatch('session/skipNews', version);
-		expect(store.state.session.skippedNews).toBe(version);
+		store.dispatch('session/setNewsId', version);
+		expect(store.state.session.newsId).toBe(version);
 		expect(localStorage.getItem('newsSession')).toBe(version);
 	});
 

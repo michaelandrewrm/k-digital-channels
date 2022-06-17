@@ -6,7 +6,7 @@ import {
 	USER_WAS_TEMP_BLOCKED,
 	USER_WILL_BE_PERMANENTLY_BLOCKED,
 	USER_WAS_PERMANENTLY_BLOCKED,
-	REMEMBER_TOKEN_INVALID,
+	INVALID_REMEMBER_TOKEN,
 } from '@modules/service/constants';
 import SignedOperation from './mock-signed-operation';
 
@@ -27,7 +27,6 @@ export default async (schema, request) => {
 
 	if (data.documentId) {
 		user = schema.users.findBy({ documentId: data.documentId });
-
 		if (!user) {
 			return returnError({ errorCode: USER_NOT_FOUND });
 		}
@@ -37,7 +36,7 @@ export default async (schema, request) => {
 		user = schema.users.findBy({ rememberToken: data.rememberToken });
 
 		if (!user) {
-			return returnError({ errorCode: REMEMBER_TOKEN_INVALID });
+			return returnError({ errorCode: INVALID_REMEMBER_TOKEN });
 		}
 	}
 

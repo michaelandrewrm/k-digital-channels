@@ -5,7 +5,7 @@ import {
 	USER_WILL_BE_PERMANENTLY_BLOCKED,
 	USER_WAS_PERMANENTLY_BLOCKED,
 	OTP_REQUIRED,
-	REMEMBER_TOKEN_INVALID,
+	INVALID_REMEMBER_TOKEN,
 	REQUEST_TIMEOUT,
 } from '@modules/service/constants';
 
@@ -56,7 +56,7 @@ export default {
 					break;
 				}
 
-				case REMEMBER_TOKEN_INVALID: {
+				case INVALID_REMEMBER_TOKEN: {
 					await dispatch('session/removeUserSession', null, { root: true });
 					await dispatch('session/forgetUserSession', null, { root: true });
 					break;
