@@ -196,9 +196,9 @@ export default {
 			currentStep: 0,
 
 			STEP_ORIGIN: 1,
-			STEP_DESTINATION: 2,
-			STEP_BENEFICIARY: 2.25,
-			STEP_AMOUNT: 2.5,
+			STEP_AMOUNT: 2,
+			STEP_DESTINATION: 2.25,
+			STEP_BENEFICIARY: 2.5,
 			STEP_RESUME: 3,
 			STEP_FEES: 3.5,
 			STEP_CONFIRMATION: 3.75,
@@ -321,12 +321,12 @@ export default {
 					this.currentStep = this.STEP_RESUME;
 				}
 
-				if (!model.amount) {
-					this.currentStep = this.STEP_AMOUNT;
-				}
-
 				if (!model.destination) {
 					this.currentStep = this.STEP_DESTINATION;
+				}
+
+				if (!model.amount) {
+					this.currentStep = this.STEP_AMOUNT;
 				}
 
 				if (!model.origin) {

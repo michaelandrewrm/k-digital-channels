@@ -238,7 +238,7 @@ export default {
 		},
 
 		transferMode({ value }) {
-			const transferMode = value?.destination.transferMode;
+			const transferMode = value?.origin.transferMode;
 
 			if (['INTERNAL', 'INTERNATIONAL', 'SEPA'].includes(transferMode)) {
 				return transferMode;
@@ -397,6 +397,7 @@ export default {
 
 		this.$emit('update:value', {
 			...this.value,
+			destination: null,
 			amount: null,
 			reason: null,
 			periodicity: null,
