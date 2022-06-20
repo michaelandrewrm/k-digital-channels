@@ -10,15 +10,15 @@
 			</li>
 			<li
 				class="c-progress-transfer__legend-item"
-				:aria-current="step === destinationStep || step === amountStep ? 'step' : null"
+				:aria-current="step === amountStep ? 'step' : null"
 			>
-				{{ $t('TRANSFERS.DATA') }}
+				{{ $t('TRANSFERS.AMOUNT') }}
 			</li>
 			<li
 				class="c-progress-transfer__legend-item"
-				:aria-current="step >= confirmationStep ? 'step' : null"
+				:aria-current="step === destinationStep ? 'step' : null"
 			>
-				{{ $t('TRANSFERS.CONFIRMATION') }}
+				{{ $t('TRANSFERS.DESTINATION') }}
 			</li>
 		</ol>
 	</div>
@@ -35,8 +35,8 @@ export default {
 	data() {
 		return {
 			originStep: 1,
-			destinationStep: 2,
-			amountStep: 2.5,
+			amountStep: 2,
+			destinationStep: 2.5,
 			confirmationStep: 3,
 		};
 	},
