@@ -1,5 +1,7 @@
 export default {
-	'account': ['checking-account', 'account', 'junior-account', 'support-account', 'remittance'],
+	'account': ['checking-account', 'account', 'junior-account', 'support-account'],
+
+	'remittance': ['remittance'],
 
 	'hefame-account': ['hefame-account'],
 
