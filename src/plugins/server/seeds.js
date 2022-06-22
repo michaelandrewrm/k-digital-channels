@@ -118,6 +118,13 @@ export default function(server) {
 			}),
 		],
 	});
+	server.create('user', {
+		documentId: 'DEVELOP@KUKENTOK.COM',
+		products: [
+			...server.createList('product', 1, 'account'),
+			...server.createList('product', 1, 'remittance'),
+		],
+	});
 
 	server.create('user', { documentId: 'A05', empty: true });
 
