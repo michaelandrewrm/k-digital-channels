@@ -101,10 +101,6 @@ export default {
 		this.$emit('update:value', {
 			...this.value,
 			destination: null,
-			reason: '',
-			date: null,
-			frequency: null,
-			maxDate: null,
 			fees: null,
 			chargeBearer: null,
 			favorite: null,

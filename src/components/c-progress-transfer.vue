@@ -20,6 +20,12 @@
 			>
 				{{ $t('TRANSFERS.DESTINATION') }}
 			</li>
+			<li
+				class="c-progress-transfer__legend-item"
+				:aria-current="step === confirmationStep ? 'step' : null"
+			>
+				{{ $t('TRANSFERS.CONFIRMATION') }}
+			</li>
 		</ol>
 	</div>
 </template>
@@ -36,14 +42,14 @@ export default {
 		return {
 			originStep: 1,
 			amountStep: 2,
-			destinationStep: 2.5,
-			confirmationStep: 3,
+			destinationStep: 3,
+			confirmationStep: 4,
 		};
 	},
 
 	computed: {
 		progress({ step }) {
-			return Math.min(Math.max(step * (100 / 3), 0), 100);
+			return Math.min(Math.max(step * (100 / 4), 0), 100);
 		},
 	},
 };

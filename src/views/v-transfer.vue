@@ -197,12 +197,12 @@ export default {
 
 			STEP_ORIGIN: 1,
 			STEP_AMOUNT: 2,
-			STEP_DESTINATION: 2.25,
-			STEP_BENEFICIARY: 2.5,
-			STEP_RESUME: 3,
-			STEP_FEES: 3.5,
-			STEP_CONFIRMATION: 3.75,
-			STEP_FINAL: 4,
+			STEP_DESTINATION: 3,
+			STEP_BENEFICIARY: 3.25,
+			STEP_RESUME: 3.5,
+			STEP_FEES: 3.7,
+			STEP_CONFIRMATION: 4,
+			STEP_FINAL: 5,
 
 			showDestinationList: true,
 			hasDestinationList: true,
