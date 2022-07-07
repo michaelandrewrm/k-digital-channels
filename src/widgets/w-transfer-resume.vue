@@ -185,7 +185,7 @@
 				<p
 					data-testid="warning-date"
 					class="text-s-light w-transfer-resume__note"
-					v-if="model.periodicity === 'today' && model.destination.transferMode !== 'INTERNAL'"
+					v-if="model.periodicity === 'today' && model.origin.transferMode !== 'INTERNAL'"
 				>
 					{{ $t('TRANSFERS.DATE_WARNING') }}
 				</p>
