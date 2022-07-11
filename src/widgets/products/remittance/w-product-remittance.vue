@@ -50,7 +50,6 @@ import CIcon from '@components/c-icon';
 import CAcrylicSheet from '@components/c-acrylic-sheet';
 import CAlert from '@components/c-alert';
 import CTranslide from '@components/c-translide';
-import MAvailableBalance from '@modals/m-available-balance';
 
 export default {
 	name: 'w-product-remittance',
@@ -78,12 +77,6 @@ export default {
 
 		hasWithholdings({ withholdings }) {
 			return withholdings?.length > 0;
-		},
-	},
-
-	methods: {
-		openAvailableBalanceInfo() {
-			return this.$store.dispatch('modal/open', MAvailableBalance);
 		},
 	},
 
