@@ -119,7 +119,7 @@ export default function(server) {
 		],
 	});
 	server.create('user', {
-		documentId: 'DEVELOP@KUKENTOK.COM',
+		documentId: 'develop@kukentok.com',
 		products: [
 			...server.createList('product', 1, 'account'),
 			...server.createList('product', 1, 'remittance'),

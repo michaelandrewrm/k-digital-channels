@@ -45,7 +45,7 @@
 						:placeholder="$t('FORM.PLACEHOLDER.USERNAME')"
 						:useNativeValidation="false"
 						:valid="!validations.username.error && !error"
-						type="text"
+						type="email"
 						autocomplete="dni"
 						@focus="isUsernameFocus = true"
 						@blur="isUsernameFocus = false"
@@ -290,7 +290,6 @@ export default {
 	methods: {
 		onUsernameInput() {
 			if (this.username) {
-				this.username = this.username.toUpperCase();
 				this.validationState.username.dirty = true;
 				this.error = false;
 				this.loading = false;
