@@ -78,7 +78,7 @@
 	"ACTIONS.OWNERSHIP-CERTIFICATE": "Certificado de titularidad",
 	"ACTIONS.RECOVER_PASSWORD": "Recuperar contraseña",
 
-	"FORM.PLACEHOLDER.USERNAME": "DNI / Pasaporte / NIE",
+	"FORM.PLACEHOLDER.USERNAME": "Email",
 	"FORM.PLACEHOLDER.PASSWORD": "Contraseña",
 	"FORM.PLACEHOLDER.SPANISH_NUMBER": "Por ejemplo: 6******99 ó +349******21",
 	"FORM.PLACEHOLDER.SEARCH_ONG": "Nombre o código ONG",
