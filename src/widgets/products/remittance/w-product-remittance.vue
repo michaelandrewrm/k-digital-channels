@@ -21,26 +21,6 @@
 				<span class="a11y-hide" v-if="product.productNumber">
 					{{ $t('PRODUCT_NUMBER_ENDED_IN', { productNumber: product.productNumber.value }) }}
 				</span>
-
-				<div
-					slot="footer"
-					class="w-product-remittance__footer"
-					:tabindex="active - 1"
-					data-testid="info-icon"
-					@click="openAvailableBalanceInfo"
-					@keypress.enter="openAvailableBalanceInfo"
-					v-if="product.postedBalance && product.postedBalance.amount"
-				>
-					<div class="w-product-remittance__available-balance">
-						<span class="text-m-book">
-							{{ $t('MY_PRODUCT.REMITTANCE.AVAILABLE_BALANCE').concat(':') }}
-						</span>
-						<span class="text-m-medium">
-							{{ $nc(product.postedBalance) }}
-						</span>
-						<c-icon src="@icons/info" size="l" />
-					</div>
-				</div>
 			</c-acrylic-sheet>
 		</div>
 
@@ -70,7 +50,6 @@ import CIcon from '@components/c-icon';
 import CAcrylicSheet from '@components/c-acrylic-sheet';
 import CAlert from '@components/c-alert';
 import CTranslide from '@components/c-translide';
-import MAvailableBalance from '@modals/m-available-balance';
 
 export default {
 	name: 'w-product-remittance',
@@ -98,12 +77,6 @@ export default {
 
 		hasWithholdings({ withholdings }) {
 			return withholdings?.length > 0;
-		},
-	},
-
-	methods: {
-		openAvailableBalanceInfo() {
-			return this.$store.dispatch('modal/open', MAvailableBalance);
 		},
 	},
 

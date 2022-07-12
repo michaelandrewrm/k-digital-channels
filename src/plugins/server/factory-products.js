@@ -65,11 +65,11 @@ export default Factory.extend({
 	}),
 
 	remittance: trait({
-		name: 'Remesas',
-		alias: 'Remesas',
+		name: 'Mi cartera',
+		alias: 'Mi cartera',
 		bic: () => faker.finance.bic(),
 		productType: { id: '17', name: 'Cuentas' },
-		productSubtype: { id: '44', name: 'Remesas' },
+		productSubtype: { id: '44', name: 'Mi cartera' },
 		productNumber: IBAN,
 		hasWithholdings: () => faker.datatype.boolean(),
 	}),

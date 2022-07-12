@@ -4,6 +4,7 @@ import { subtypesById } from '@modules/products/product-subtypes';
 import { intervenersByTitle } from '@modules/products/product-interveners';
 import { faker } from '@faker-js/faker';
 import accountMock from './mock-product-account';
+import remittanceMock from './mock-product-remittance';
 import cardMock from './mock-product-card';
 import creditMock from './mock-product-credit';
 import endorsementMock from './mock-product-endorsement';
@@ -18,6 +19,7 @@ import managedPortfolioMock from './mock-managed-portfolio';
 
 const productsMock = {
 	'account': accountMock,
+	'remittance': remittanceMock,
 	'card': cardMock,
 	'credit': creditMock,
 	'endorsement': endorsementMock,

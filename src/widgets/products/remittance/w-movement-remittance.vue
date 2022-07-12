@@ -9,7 +9,6 @@
 			:amount="$nc(source.amount)"
 			:info="$d(new Date(source.operationDate), 'numeric')"
 			:balance="$nc(source.balance)"
-			:comment="commentText"
 		/>
 	</router-link>
 </template>
