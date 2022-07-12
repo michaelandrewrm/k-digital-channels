@@ -599,6 +599,7 @@
 	"DETAIL.SIGNATURE.ERROR.DESC": "An error has ocurred while executing the operation. You can try again later, or contact us for more information.",
 	"DETAIL.SIGNATURE.SIGNATURE_EXPIRED.ERROR": "An error has ocurred while executing the operation. The pending operation to sign has expired.",
 	"DETAIL.LINKED_PHONE": "Phone associated with the app",
+	"DETAIL.WALLET_NUMBER": "Wallet number",
 	"DETAIL.IBAN": "IBAN",
 	"DETAIL.BIC": "BIC/Swift",
 	"DETAIL.ISIN": "ISIN",

@@ -595,6 +595,7 @@
 	"DETAIL.SIGNATURE.ERROR.DESC": "Ha habido un error al ejecutar la operación. \nPuedes intentar de nuevo más tarde, o ponerte en contacto con nosotros para mayor información.",
 	"DETAIL.SIGNATURE.SIGNATURE_EXPIRED.ERROR": "Ha habido un error al ejecutar la operación. La operación pendiente de firma ha expirado.",
 	"DETAIL.LINKED_PHONE": "Móvil asociado",
+	"DETAIL.WALLET_NUMBER": "Número de cartera",
 	"DETAIL.IBAN": "IBAN",
 	"DETAIL.BIC": "BIC/Swift",
 	"DETAIL.ISIN": "ISIN",

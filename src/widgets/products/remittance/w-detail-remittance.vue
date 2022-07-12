@@ -1,18 +1,19 @@
 <template>
 	<div class="w-detail-remittance">
 		<div class="w-detail-remittance__group">
+			<c-list-icon-item
+				v-if="detail.productNumber"
+				:title="$t('DETAIL.WALLET_NUMBER')"
+				:description="detail.productNumber.value"
+				icon="@icons/productManagedPortfolio"
+				copyable
+			/>
+		</div>
+		<div class="w-detail-remittance__group">
 			<w-interveners v-if="detail.interveners" :interveners="detail.interveners" />
 		</div>
 
 		<div class="w-detail-remittance__group">
-			<c-list-icon-item
-				v-if="detail.productNumber"
-				:title="$t('DETAIL.IBAN')"
-				:description="$pn(detail.productNumber, 'format')"
-				icon="@icons/wallet"
-				copyable
-			/>
-
 			<c-list-icon-item
 				v-if="detail.bic"
 				:title="$t('DETAIL.BIC')"
@@ -29,7 +30,8 @@
 				:description="$d(new Date(detail.openingDate), 'numeric')"
 				icon="@icons/calendar"
 			/>
-
+		</div>
+		<div class="w-detail-remittance__group">
 			<c-list-icon-item
 				v-if="detail.lastMovementDate"
 				:title="$t('DETAIL.DATE_LAST_MOVEMENT')"
@@ -38,7 +40,7 @@
 			/>
 		</div>
 
-		<div
+		<!-- <div
 			v-if="detail && !detail.isNotProfileAllow"
 			class="w-detail-remittance__group"
 			data-testid="profiles"
@@ -62,7 +64,7 @@
 					</li>
 				</ul>
 			</c-list-icon-item>
-		</div>
+		</div> -->
 	</div>
 </template>
 
