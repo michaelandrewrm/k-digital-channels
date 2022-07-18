@@ -72,7 +72,6 @@ export default {
 						id: destination?.productNumber?.value,
 					},
 					name: destination?.name,
-					transferMode: 'INTERNAL',
 					view: {
 						name: destination?.alias,
 						id: this.$pn(destination?.productNumber),
@@ -102,11 +101,6 @@ export default {
 		this.$emit('update:value', {
 			...this.value,
 			destination: null,
-			amount: null,
-			reason: '',
-			date: null,
-			frequency: null,
-			maxDate: null,
 			fees: null,
 			chargeBearer: null,
 			favorite: null,

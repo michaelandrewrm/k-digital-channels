@@ -40,6 +40,49 @@
 		</c-translide>
 
 		<c-translide immediate>
+			<section v-if="model.amount" class="w-transfer-resume__info" data-testid="section-amount">
+				<header class="w-transfer-resume__label">
+					<h2 class="text-m-medium">{{ $t('TRANSFERS.AMOUNT') }}</h2>
+				</header>
+
+				<button
+					:aria-label="
+						$t('TRANSFERS.EDIT_RESUME_ITEM', {
+							title: $t('TRANSFERS.AMOUNT'),
+							item: $nc(model.amount),
+						})
+					"
+					class="w-transfer-resume__info-button"
+					@click="editSection('amount')"
+					data-testid="edit-amount"
+					v-if="editable"
+					:disabled="disabledSections && disabledSections.includes('amount')"
+					:invalid="
+						invalidSection.includes('amount-balance') ||
+							invalidSection.includes('amount-duplicated')
+					"
+				>
+					<div class="w-transfer-resume__info-card --one-column">
+						<div class="text-m-medium">{{ $nc(model.amount) }}</div>
+						<c-icon src="@icons/editPen" size="m" class="w-transfer-resume__info-icon" />
+					</div>
+				</button>
+				<div v-else class="w-transfer-resume__info-button">
+					<div class="w-transfer-resume__info-card --one-column">
+						<div class="text-m-medium">{{ $nc(model.amount) }}</div>
+					</div>
+				</div>
+
+				<div
+					v-if="invalidSection.includes('amount-balance')"
+					class="w-transfer-resume__note text-s-medium color-text-error"
+				>
+					{{ $t('TRANSFERS.BALANCE_ERROR') }}
+				</div>
+			</section>
+		</c-translide>
+
+		<c-translide immediate>
 			<section
 				v-if="model.destination"
 				class="w-transfer-resume__info"
@@ -109,49 +152,6 @@
 		</c-translide>
 
 		<c-translide immediate>
-			<section v-if="model.amount" class="w-transfer-resume__info" data-testid="section-amount">
-				<header class="w-transfer-resume__label">
-					<h2 class="text-m-medium">{{ $t('TRANSFERS.AMOUNT') }}</h2>
-				</header>
-
-				<button
-					:aria-label="
-						$t('TRANSFERS.EDIT_RESUME_ITEM', {
-							title: $t('TRANSFERS.AMOUNT'),
-							item: $nc(model.amount),
-						})
-					"
-					class="w-transfer-resume__info-button"
-					@click="editSection('amount')"
-					data-testid="edit-amount"
-					v-if="editable"
-					:disabled="disabledSections && disabledSections.includes('amount')"
-					:invalid="
-						invalidSection.includes('amount-balance') ||
-							invalidSection.includes('amount-duplicated')
-					"
-				>
-					<div class="w-transfer-resume__info-card --one-column">
-						<div class="text-m-medium">{{ $nc(model.amount) }}</div>
-						<c-icon src="@icons/editPen" size="m" class="w-transfer-resume__info-icon" />
-					</div>
-				</button>
-				<div v-else class="w-transfer-resume__info-button">
-					<div class="w-transfer-resume__info-card --one-column">
-						<div class="text-m-medium">{{ $nc(model.amount) }}</div>
-					</div>
-				</div>
-
-				<div
-					v-if="invalidSection.includes('amount-balance')"
-					class="w-transfer-resume__note text-s-medium color-text-error"
-				>
-					{{ $t('TRANSFERS.BALANCE_ERROR') }}
-				</div>
-			</section>
-		</c-translide>
-
-		<c-translide immediate>
 			<section v-if="model.date" class="w-transfer-resume__info" data-testid="section-date">
 				<header class="w-transfer-resume__label">
 					<h2 class="text-m-medium">{{ $t('DETAIL.TRANSFER_DATE') }}</h2>
@@ -185,7 +185,7 @@
 				<p
 					data-testid="warning-date"
 					class="text-s-light w-transfer-resume__note"
-					v-if="model.periodicity === 'today' && model.destination.transferMode !== 'INTERNAL'"
+					v-if="model.periodicity === 'today' && model.origin.transferMode !== 'INTERNAL'"
 				>
 					{{ $t('TRANSFERS.DATE_WARNING') }}
 				</p>

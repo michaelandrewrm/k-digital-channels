@@ -114,6 +114,7 @@ export default {
 					alias,
 					balance,
 					productNumber,
+					transferMode: 'INTERNAL',
 				};
 			});
 		},

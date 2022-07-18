@@ -14,7 +14,7 @@ const normalizeModel = (model) => {
 		amount: model.amount,
 		date: model.date,
 		reason: model.reason,
-		transferMode: model.destination.transferMode,
+		transferMode: model.origin.transferMode,
 		favorite: Boolean(model.favorite),
 	};
 
