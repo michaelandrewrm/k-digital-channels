@@ -36,6 +36,15 @@ export default [
 				},
 			},
 			{
+				path: 'helper',
+				name: 'helper',
+				props: { primary: true, secondary: true },
+				components: {
+					primary: () => import(/* webpackChunkName: "v-global" */ '@views/v-global'),
+					secondary: () => import(/* webpackChunkName: "v-helper" */ '@views/v-helper'),
+				},
+			},
+			{
 				path: 'customer-service',
 				name: 'customer-service',
 				props: { primary: true },

@@ -143,7 +143,7 @@ export default {
 						title: this.$t('CORREOS_CASH.TITLE'),
 					},
 					{
-						id: 'customer-service',
+						id: 'helper',
 						icon: iconCustomerService,
 						title: this.$t('MENU.CUSTOMER_SERVICE'),
 						disabled: isEmbedded,
@@ -189,7 +189,7 @@ export default {
 					title: this.$t('MENU.TRANSFERS'),
 				},
 				{
-					id: 'customer-service',
+					id: 'helper',
 					icon: iconCustomerService,
 					title: this.$t('MENU.CUSTOMER_SERVICE'),
 					disabled: isEmbedded,
