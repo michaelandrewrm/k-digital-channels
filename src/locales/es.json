@@ -196,6 +196,9 @@
 	"REQUEST_FAILURE.DESC": "Algo no ha ido bien, por favor, inténtalo de nuevo en unos minutos.",
 	"CHUNK_ERROR.TITLE": "Atención",
 	"CHUNK_ERROR.DESC": "Por tu seguridad, debemos recargar la página. Te llevaremos de nuevo a donde estabas una vez hayas iniciado la sesión.",
+
+	"HELPER.TITLE": "¿Te ayudamos?",
+
 	"HELLO": "Hola",
 	"CAN_WE_HELP_YOU": "¿Te ayudamos?",
 	"BALANCE": "Saldo",

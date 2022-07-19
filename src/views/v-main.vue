@@ -277,13 +277,6 @@ export default {
 
 	methods: {
 		goto(event) {
-			if (event === 'help') {
-				const url = 'http://caminos.grupocaminosapps.com/lp/mkt/buscador-funcionalidades/';
-				const tab = window.open();
-				return tab.location.replace(url);
-			}
-
-			/* istanbul ignore if */
 			if (this.$router.currentRoute.name !== event) {
 				return this.$router.push({ name: event }).finally(() => {
 					this.openMenu = false;
