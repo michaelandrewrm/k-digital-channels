@@ -201,6 +201,8 @@
 	"CHUNK_ERROR.DESC": "For your safety, we must reload the page. We will take you back where you were once you have logged in.",
 
 	"HELPER.TITLE": "Can we help you?",
+	"HELPER.SEARCH": "Didn't get what you are looking for?",
+
 	"HELLO": "Hello",
 	"CAN_WE_HELP_YOU": "Can we help you?",
 	"BALANCE": "Balance",
