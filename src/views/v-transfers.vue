@@ -26,6 +26,29 @@
 					</div>
 				</button>
 			</div>
+			<div class="v-transfer__wrapper" v-if="!isBancofar">
+				<button
+					data-testid="new-transfer"
+					@click="goto({ name: 'transfer', params: { action: 'new' } })"
+					class="v-transfer__button"
+				>
+					<div class="v-transfer__card">
+						<div class="v-transfer__card-column-1">
+							<span class="v-transfer__icon --secondary">
+								<c-icon src="@icons/newTransfer" size="xl" />
+							</span>
+						</div>
+						<div class="v-transfer__card-column-2">
+							<h2 class="v-transfer__card-title text-m-medium">
+								{{ $t('TRANSFERS.ADD_FUNDS.TITLE') }}
+							</h2>
+							<p class="v-transfer__card-desc text-m-light">
+								{{ $t('TRANSFERS.ADD_FUNDS.DESC') }}
+							</p>
+						</div>
+					</div>
+				</button>
+			</div>
 
 			<div class="v-transfer__wrapper" v-if="!isBancofar">
 				<button
@@ -41,13 +64,10 @@
 						</div>
 						<div class="v-transfer__card-column-2">
 							<h2 class="v-transfer__card-title text-m-medium">
-								{{ $t('TRANSFERS.MY_TRANSFERS.TITLE') }}
+								{{ $t('TRANSFERS.MY_OPERATIONS.TITLE') }}
 							</h2>
 							<p class="v-transfer__card-desc text-m-light">
-								{{ $t('TRANSFERS.MY_TRANSFERS.DESC1') }}
-							</p>
-							<p class="v-transfer__card-desc text-m-light">
-								{{ $t('TRANSFERS.MY_TRANSFERS.DESC2') }}
+								{{ $t('TRANSFERS.MY_OPERATIONS.DESC') }}
 							</p>
 						</div>
 					</div>
