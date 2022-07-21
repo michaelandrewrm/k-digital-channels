@@ -77,30 +77,6 @@
 					</div>
 				</button>
 			</div>
-
-			<div class="v-transfer__wrapper" v-if="enableBizum && !isBancofar">
-				<button
-					data-testid="bizum-register"
-					@click="goto({ name: 'bizum' })"
-					class="v-transfer__button"
-				>
-					<div class="v-transfer__card">
-						<div class="v-transfer__card-column-1">
-							<span class="v-transfer__icon v-transfer__icon--bizum">
-								<c-icon src="@icons/bizum" />
-							</span>
-						</div>
-						<div class="v-transfer__card-column-2">
-							<h2 class="v-transfer__card-title text-m-medium">
-								{{ $t('TRANSFERS.BIZUM.TITLE') }}
-							</h2>
-							<p class="v-transfer__card-desc text-m-light">
-								{{ $t('TRANSFERS.BIZUM.DESC') }}
-							</p>
-						</div>
-					</div>
-				</button>
-			</div>
 		</div>
 	</l-page>
 </template>
@@ -108,7 +84,6 @@
 <script>
 import LPage from '@layouts/l-page';
 import CIcon from '@components/c-icon';
-import bizumModule from '@modules/bizum/m-bizum';
 
 import mq from '@utils/matchMedia';
 import { onDesktop } from '@theme';
@@ -117,8 +92,6 @@ import { mapState } from 'vuex';
 export default {
 	name: 'v-transfers',
 
-	modules: { bizum: bizumModule },
-
 	components: {
 		LPage,
 		CIcon,
@@ -126,10 +99,6 @@ export default {
 
 	beforeRouteEnter(to, from, next) {
 		next((vm) => vm.gotoHandler(to, from));
-	},
-
-	data() {
-		return { enableBizum: false };
 	},
 
 	computed: {
@@ -163,10 +132,6 @@ export default {
 				this.goto({ name: 'transfer', params: { action: 'new' } });
 			}
 		},
-	},
-
-	async created() {
-		this.enableBizum = await this.$store.dispatch('bizum/isEnabled');
 	},
 };
 </script>
@@ -227,9 +192,5 @@ export default {
 
 .v-transfer__card-desc {
 	margin-top: 10px;
-}
-
-.v-transfer__icon--bizum {
-	font-size: 1.5rem;
 }
 </style>
