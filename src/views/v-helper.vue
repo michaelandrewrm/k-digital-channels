@@ -15,17 +15,22 @@
 			<h2 class="v-helper__section-title">
 				{{ this.$t('HELPER.TITLE') }}
 			</h2>
-			<div class="v-helper__items">
-				<c-helper-item />
+			<div class="v-helper__items" v-for="item in items" :key="item.id">
+				<c-helper-item :title="item.title" :text="item.text" />
 			</div>
 		</section>
 		<section class="v-helper__section">
 			<h2 class="v-helper__section-title">
 				{{ this.$t('HELPER.SEARCH') }}
 			</h2>
-			<c-text-field class="v-helper__input-search">
-				<c-text-field-icon>
-					<c-icon></c-icon>
+			<c-text-field
+				class="v-helper__input-search"
+				:placeholder="$t('HELPER.PLACEHOLDER.SEARCH')"
+				type="text"
+				outlined
+			>
+				<c-text-field-icon slot="leadingIcon">
+					<c-icon class="v-helper__search-icon" src="@icons/search" />
 				</c-text-field-icon>
 			</c-text-field>
 		</section>
@@ -42,7 +47,27 @@ import CHelperItem from '@components/c-helper-item';
 
 export default {
 	name: 'v-helper',
+
 	components: { lPage, CIcon, CTextField, CTextFieldIcon, CHelperItem },
+
+	data() {
+		return {
+			items: [
+				{
+					id: 1,
+					title: '¿Cómo consultar y descargar los movimientos de una cuenta?',
+					text:
+						"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+				},
+				{
+					id: 2,
+					title: '¿Cómo activar una cuenta?',
+					text:
+						"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+				},
+			],
+		};
+	},
 
 	computed: {
 		...mapState('session', ['userName']),
@@ -61,6 +86,10 @@ export default {
 }
 .v-helper__header-icon {
 	font-size: 26px;
+	color: RGB(var(--color-secondary));
+}
+.v-helper__title-text {
+	color: RGB(var(--color-secondary));
 }
 .v-helper__section {
 	display: flex;
@@ -71,9 +100,17 @@ export default {
 }
 .v-helper__section-title {
 	font-size: 2rem;
-	font-weight: 500;
+	font-weight: 400;
+	margin-bottom: 10px;
+}
+.v-helper__items:last-child {
+	border-bottom: solid 1px RGB(var(--color-primary-light));
 }
 .v-helper__input-search {
-	margin-top: 20px;
+	margin-top: 10px;
+}
+
+.v-helper__search-icon {
+	font-size: 1.7rem;
 }
 </style>
