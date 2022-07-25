@@ -1,7 +1,7 @@
 <template>
 	<div class="c-helper-item">
 		<div class="c-helper-item__content">
-			<h3 class="c-helper-item__title">{{ title }}</h3>
+			<h3 class="c-helper-item__title text-m-medium">{{ title }}</h3>
 			<c-icon-button class="c-helper-item__button" icon="@icons/more" raised @click="toggle" />
 		</div>
 		<div class="c-helper-item__text" v-show="active">
@@ -39,7 +39,7 @@ export default {
 
 <style lang="scss" scoped>
 .c-helper-item {
-	width: 330px;
+	width: 100%;
 	min-height: 80px;
 	color: RGB(var(--color-primary));
 	border-top: solid 1px RGB(var(--color-primary-light));
@@ -53,7 +53,6 @@ export default {
 }
 .c-helper-item__title {
 	max-width: 270px;
-	font-size: 1.6rem;
 }
 .c-helper-item__button-icon {
 	color: RGB(var(--color-primary));

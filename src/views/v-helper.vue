@@ -12,19 +12,20 @@
 			</div>
 		</div>
 		<section class="v-helper__section">
-			<h2 class="v-helper__section-title">
+			<label class="v-helper__section-title" for="v-helper__items">
 				{{ this.$t('HELPER.TITLE') }}
-			</h2>
-			<div class="v-helper__items" v-for="item in items" :key="item.id">
+			</label>
+			<div class="v-helper__items" id="v-helper__items" v-for="item in items" :key="item.id">
 				<c-helper-item :title="item.title" :text="item.text" />
 			</div>
 		</section>
 		<section class="v-helper__section">
-			<h2 class="v-helper__section-title">
+			<label class="v-helper__section-title" for="v-helper__search">
 				{{ this.$t('HELPER.SEARCH') }}
-			</h2>
+			</label>
 			<c-text-field
 				class="v-helper__input-search"
+				id="v-helper__search"
 				:placeholder="$t('HELPER.PLACEHOLDER.SEARCH')"
 				type="text"
 				outlined
@@ -50,27 +51,23 @@ export default {
 
 	components: { lPage, CIcon, CTextField, CTextFieldIcon, CHelperItem },
 
-	data() {
-		return {
-			items: [
+	computed: {
+		...mapState('session', ['userName']),
+
+		items() {
+			return [
 				{
 					id: 1,
-					title: '¿Cómo consultar y descargar los movimientos de una cuenta?',
-					text:
-						"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+					title: this.$t('HELPER.QUESTION.TITLE1'),
+					text: this.$t('HELPER.QUESTION.ANSWER1'),
 				},
 				{
 					id: 2,
-					title: '¿Cómo activar una cuenta?',
-					text:
-						"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+					title: this.$t('HELPER.QUESTION.TITLE2'),
+					text: this.$t('HELPER.QUESTION.ANSWER2'),
 				},
-			],
-		};
-	},
-
-	computed: {
-		...mapState('session', ['userName']),
+			];
+		},
 	},
 };
 </script>
@@ -98,10 +95,20 @@ export default {
 	align-items: flex-start;
 	padding: 60px 60px 10px 60px;
 }
+
+@media ($on-mobile) {
+	.v-helper__section {
+		padding: 10px;
+		margin: 30px 0;
+	}
+}
 .v-helper__section-title {
 	font-size: 2rem;
 	font-weight: 400;
 	margin-bottom: 10px;
+}
+.v-helper__items {
+	width: 330px;
 }
 .v-helper__items:last-child {
 	border-bottom: solid 1px RGB(var(--color-primary-light));
