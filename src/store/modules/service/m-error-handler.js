@@ -24,8 +24,6 @@ export default {
 
 			/* istanbul ignore next */
 			if (!error.response) {
-				// TODO mostrar una modal de servidor caído o algo así
-				// TODO deberíamos advertir a bugsnag de esto.
 				return error;
 			}
 

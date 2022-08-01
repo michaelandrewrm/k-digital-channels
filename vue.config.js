@@ -40,12 +40,6 @@ module.exports = {
 				minChunks: 2,
 				maxAsyncRequests: Infinity,
 				cacheGroups: {
-					bugsnag: {
-						test: /[\\/]node_modules[\\/]@bugsnag[\\/]/,
-						name: 'bugsnag',
-						chunks: 'all',
-						minChunks: 1,
-					},
 					hammerjs: {
 						test: /[\\/]node_modules[\\/]hammerjs[\\/]/,
 						name: 'hammerjs',
@@ -126,8 +120,8 @@ module.exports = {
 			entry: `src/projects/${VUE_APP_CURRENT_PROJECT}/entry.js`,
 			title: projectsMapped.find(({ value }) => value === VUE_APP_CURRENT_PROJECT).name,
 			projectId: VUE_APP_CURRENT_PROJECT,
-			ua: { bancofar: 'GTM-M565QJ3', caminos: 'GTM-KBMWHB8' }[VUE_APP_CURRENT_PROJECT],
-			chunks: ['chunk-vendors', 'chunk-common', 'index', 'bugsnag', 'vue'],
+			ua: { bancofar: '', caminos: '' }[VUE_APP_CURRENT_PROJECT],
+			chunks: ['chunk-vendors', 'chunk-common', 'index', 'vue'],
 			meta: {
 				'Content-Security-Policy': {
 					'http-equiv': 'Content-Security-Policy',

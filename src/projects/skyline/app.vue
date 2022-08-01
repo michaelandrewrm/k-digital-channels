@@ -154,24 +154,13 @@ export default {
 
 			/* istanbul ignore else */
 			if (minutesFromLastRequest > this.MAX_MINUTES_FOR_SESSION_EXPIRATION) {
-				dispatch('bugsnag/log', {
-					type: 'log',
-					title: 'Session expired after 10 mins of network inactivity',
-				});
 				dispatch('authn/passiveLogout');
 			}
 		},
 	},
 
 	created() {
-		this.$router.afterEach((to, from) => {
-			this.$store.dispatch('bugsnag/log', {
-				type: 'navigation',
-				title: 'Router push',
-				from: from.path,
-				to: to.path,
-			});
-
+		this.$router.afterEach((to) => {
 			this.$nextTick(() => {
 				window.dispatchEvent(
 					new CustomEvent('bridge-router-nav', { detail: { name: to.name, fullPath: to.fullPath } })

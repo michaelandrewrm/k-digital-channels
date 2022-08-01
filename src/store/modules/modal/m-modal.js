@@ -53,9 +53,6 @@ export default ({ timeout, name = 'modal' } = {}) => ({
 
 				// extend data only if it's a component
 				const Data = modal.render ? Vue.extend(modal) : modal;
-				const componentOptions =
-					Data && Data.options ? { name: Data.options.name } : { text: data.text };
-				dispatch('bugsnag/log', { title: `${name} open`, ...componentOptions }, { root: true });
 				commit(ADD, { component: Data, props, layer });
 
 				const modalId = state.lastUID;

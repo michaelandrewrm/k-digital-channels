@@ -15,10 +15,6 @@ describe('m-modal', () => {
 		store = new Vuex.Store({
 			modules: {
 				modal: modal(),
-				bugsnag: {
-					namespaced: true,
-					actions: { log: jest.fn() },
-				},
 			},
 			strict: false,
 		});

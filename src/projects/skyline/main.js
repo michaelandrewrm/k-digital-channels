@@ -1,8 +1,6 @@
 import Vue from 'vue';
-import { getCLS, getFID, getLCP, getFCP, getTTFB } from 'web-vitals';
 import i18n from '@locales/setup';
 import store from '@store';
-import bugsnagClient from '@plugins/bugsnag';
 import Modules from '@plugins/modules';
 import ProductNumber from '@plugins/productNumber';
 import { makeServer, makeServerForCypress } from '@plugins/server';
@@ -25,29 +23,6 @@ if (window.Cypress) {
 	makeServer();
 }
 
-// Envía las métricas de rendimiento a google analytics.
-if (window.dataLayer) {
-	const sendToGoogleAnalytics = ({ name, delta, value, id }) => {
-		window.dataLayer.push({
-			event: 'coreWebVitals',
-			webVitalsMeasurement: {
-				name,
-				id,
-				value,
-				delta,
-				valueRounded: Math.round(name === 'CLS' ? value * 1000 : value),
-				deltaRounded: Math.round(name === 'CLS' ? delta * 1000 : delta),
-			},
-		});
-	};
-
-	getCLS(sendToGoogleAnalytics);
-	getFID(sendToGoogleAnalytics);
-	getLCP(sendToGoogleAnalytics);
-	getFCP(sendToGoogleAnalytics);
-	getTTFB(sendToGoogleAnalytics);
-}
-
 const instance = new Vue({
 	i18n,
 	router,
@@ -59,8 +34,6 @@ const instance = new Vue({
 		}
 	},
 	created() {
-		this.$store.dispatch('bugsnag/install', bugsnagClient);
-
 		window.addEventListener('message', ({ data, source, origin, ports }) => {
 			if (data?.name === 'bridge-store-dispatch') {
 				return this.$store

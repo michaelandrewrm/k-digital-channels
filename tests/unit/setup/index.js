@@ -78,13 +78,6 @@ const createPristineVue = () => {
 				store.registerModule(key, mod);
 			});
 
-			store.dispatch('bugsnag/install', {
-				leaveBreadcrumb: jest.fn(),
-				log: jest.fn(),
-				notify: jest.fn(),
-				setUser: jest.fn(),
-				addMetadata: jest.fn(),
-			});
 			return store;
 		},
 

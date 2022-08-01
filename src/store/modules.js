@@ -1,4 +1,3 @@
-import bugsnag from '@modules/bugsnag/m-bugsnag';
 import device from '@modules/device/m-device';
 import liveagent from '@modules/liveagent/m-liveagent';
 import loading from '@modules/loading/m-loading';
@@ -16,7 +15,6 @@ import sirvase from '@modules/sirvase/m-sirvase';
 import projectStore from '@local-store';
 
 export default {
-	bugsnag,
 	device,
 	liveagent,
 	loading,

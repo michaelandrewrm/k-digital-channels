@@ -56,8 +56,6 @@ describe('app.vue', () => {
 			actions: { ...actions.authn },
 		});
 
-		store.mockModule('bugsnag', { log: jest.fn().mockResolvedValue() });
-
 		router.addRoute({ name: 'login', path: '/login' });
 
 		wp = shallowMount(Component, { localVue, store, router });
