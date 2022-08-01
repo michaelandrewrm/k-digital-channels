@@ -330,6 +330,15 @@ export default [
 				},
 			},
 			{
+				path: 'founds/:action',
+				name: 'founds',
+				props: { primary: true, secondary: true },
+				components: {
+					primary: () => import(/* webpackChunkName: "v-transfers" */ '@views/v-transfers'),
+					secondary: () => import(/* webpackChunkName: "v-add-founds" */ '@views/v-add-founds'),
+				},
+			},
+			{
 				path: 'my-transfers/:productId',
 				name: 'my-transfers',
 				props: { primary: true, secondary: true },

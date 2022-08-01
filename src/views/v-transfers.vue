@@ -29,7 +29,7 @@
 			<div class="v-transfer__wrapper" v-if="!isBancofar">
 				<button
 					data-testid="new-transfer"
-					@click="goto({ name: 'transfer', params: { action: 'new' } })"
+					@click="goto({ name: 'founds', params: { action: 'add' } })"
 					class="v-transfer__button"
 				>
 					<div class="v-transfer__card">
@@ -143,7 +143,7 @@ export default {
 		gotoHandler(to, from) {
 			const { name } = to;
 			const { isDesktop, isBancofar } = this;
-			const viewLinks = ['transfer', 'my-transfers'];
+			const viewLinks = ['transfer', 'my-transfers', 'founds'];
 
 			if (isDesktop && name === 'transfers' && !viewLinks.includes(from.name)) {
 				if (isBancofar) {

@@ -35,6 +35,7 @@
 	"ACTIONS.CONTINUE": "Continuar",
 	"ACTIONS.CONFIRM": "Confirmar",
 	"ACTIONS.OPTIONS": "Opciones",
+	"ACTIONS.ADD_FOUNDS": "Nuevo ingreso",
 	"ACTIONS.NEW_TRANSFER": "Nueva transferencia",
 	"ACTIONS.MODIFY_TRANSFER": "Modificar transferencia",
 	"ACTIONS.REPEAT_TRANSFER": "Repetir transferencia",
@@ -795,6 +796,12 @@
 	"DETAIL.EXECUTION_DATE": "Fecha de ejecución",
 	"DETAIL.END_DATE": "Fecha de fin",
 	"DETAIL.BENEFICIARY": "Beneficiario",
+
+	"FOUNDS.ORIGIN_ACCOUNT": "Origen",
+	"FOUNDS.SELECT_ORIGIN_ACCOUNT": "Selecciona cómo vas a ingresar dinero",
+	"FOUNDS.ORIGIN_ITEM1": "Con tarjeta de crédito",
+	"FOUNDS.ORIGIN_ITEM2": "Con código",
+
 	"TRANSFERS.MODEL_NAME": "Transferencia",
 	"TRANSFERS.ORIGIN": "Origen",
 	"TRANSFERS.DATA": "Datos",

@@ -35,6 +35,7 @@
 	"ACTIONS.CONTINUE": "Continue",
 	"ACTIONS.CONFIRM": "Confirm",
 	"ACTIONS.OPTIONS": "Options",
+	"ACTIONS.ADD_FOUNDS": "New entry",
 	"ACTIONS.NEW_TRANSFER": "New transfer",
 	"ACTIONS.MODIFY_TRANSFER": "Modify transfer",
 	"ACTIONS.REPEAT_TRANSFER": "Repeat transfer",
@@ -799,6 +800,12 @@
 	"DETAIL.EXECUTION_DATE": "Execution date",
 	"DETAIL.END_DATE": "End date",
 	"DETAIL.BENEFICIARY": "Beneficiary",
+
+	"FOUNDS.ORIGIN_ACCOUNT": "Origin",
+	"FOUNDS.SELECT_ORIGIN_ACCOUNT": "Select how you are going to add founds",
+	"FOUNDS.ORIGIN_ITEM1": "Credit card",
+	"FOUNDS.ORIGIN_ITEM2": "Code",
+	
 	"TRANSFERS.MODEL_NAME": "Transfer",
 	"TRANSFERS.ORIGIN": "Origin",
 	"TRANSFERS.DATA": "Data",
