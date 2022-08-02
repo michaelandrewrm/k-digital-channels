@@ -196,6 +196,15 @@
 	"REQUEST_FAILURE.DESC": "Algo no ha ido bien, por favor, inténtalo de nuevo en unos minutos.",
 	"CHUNK_ERROR.TITLE": "Atención",
 	"CHUNK_ERROR.DESC": "Por tu seguridad, debemos recargar la página. Te llevaremos de nuevo a donde estabas una vez hayas iniciado la sesión.",
+
+	"HELPER.TITLE": "¿Te ayudamos?",
+	"HELPER.SEARCH": "¿No has conseguido lo que buscas?",
+	"HELPER.PLACEHOLDER.SEARCH": "¿Como podemos ayudarte el día de hoy? ",
+	"HELPER.QUESTION.TITLE1": "¿Cómo consultar y descargar los movimientos de una cuenta?",
+	"HELPER.QUESTION.ANSWER1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+	"HELPER.QUESTION.TITLE2": "¿Cómo activar una cuenta?",
+	"HELPER.QUESTION.ANSWER2": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+
 	"HELLO": "Hola",
 	"CAN_WE_HELP_YOU": "¿Te ayudamos?",
 	"BALANCE": "Saldo",

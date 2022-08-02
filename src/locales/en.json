@@ -200,6 +200,14 @@
 	"CHUNK_ERROR.TITLE": "Attention",
 	"CHUNK_ERROR.DESC": "For your safety, we must reload the page. We will take you back where you were once you have logged in.",
 
+	"HELPER.TITLE": "Can we help you?",
+	"HELPER.SEARCH": "Didn't get what you are looking for?",
+	"HELPER.PLACEHOLDER.SEARCH": "How can we help you today?",
+	"HELPER.QUESTION.TITLE1": "¿Cómo consultar y descargar los movimientos de una cuenta?",
+	"HELPER.QUESTION.ANSWER1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+	"HELPER.QUESTION.TITLE2": "How to activate an account?",
+	"HELPER.QUESTION.ANSWER2": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+
 	"HELLO": "Hello",
 	"CAN_WE_HELP_YOU": "Can we help you?",
 	"BALANCE": "Balance",

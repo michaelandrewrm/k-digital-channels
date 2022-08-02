@@ -143,7 +143,7 @@ export default {
 						title: this.$t('CORREOS_CASH.TITLE'),
 					},
 					{
-						id: 'customer-service',
+						id: 'helper',
 						icon: iconCustomerService,
 						title: this.$t('MENU.CUSTOMER_SERVICE'),
 						disabled: isEmbedded,
@@ -189,7 +189,7 @@ export default {
 					title: this.$t('MENU.TRANSFERS'),
 				},
 				{
-					id: 'customer-service',
+					id: 'helper',
 					icon: iconCustomerService,
 					title: this.$t('MENU.CUSTOMER_SERVICE'),
 					disabled: isEmbedded,
@@ -277,13 +277,6 @@ export default {
 
 	methods: {
 		goto(event) {
-			if (event === 'help') {
-				const url = 'http://caminos.grupocaminosapps.com/lp/mkt/buscador-funcionalidades/';
-				const tab = window.open();
-				return tab.location.replace(url);
-			}
-
-			/* istanbul ignore if */
 			if (this.$router.currentRoute.name !== event) {
 				return this.$router.push({ name: event }).finally(() => {
 					this.openMenu = false;
