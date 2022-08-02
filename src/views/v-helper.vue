@@ -96,12 +96,6 @@ export default {
 	padding: 60px 60px 10px 60px;
 }
 
-@media ($on-mobile) {
-	.v-helper__section {
-		padding: 10px;
-		margin: 30px 0;
-	}
-}
 .v-helper__section-title {
 	font-size: 2rem;
 	font-weight: 400;
@@ -110,8 +104,8 @@ export default {
 .v-helper__items {
 	width: 330px;
 }
-.v-helper__items:last-child {
-	border-bottom: solid 1px RGB(var(--color-primary-light));
+.v-helper__items:first-child {
+	border-top: solid 1px RGB(var(--color-primary));
 }
 .v-helper__input-search {
 	margin-top: 10px;
@@ -119,5 +113,20 @@ export default {
 
 .v-helper__search-icon {
 	font-size: 1.7rem;
+}
+
+@media ($on-mobile) {
+	.v-helper__items {
+		width: 100%;
+	}
+	.v-helper__section {
+		padding: 10px;
+		margin: 30px 0;
+	}
+}
+@media ($on-tablet) {
+	.v-helper__items {
+		width: 100%;
+	}
 }
 </style>

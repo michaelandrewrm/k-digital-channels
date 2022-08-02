@@ -41,24 +41,34 @@ export default {
 .c-helper-item {
 	width: 100%;
 	min-height: 80px;
-	color: RGB(var(--color-primary));
-	border-top: solid 1px RGB(var(--color-primary-light));
+	color: RGB(var(--color-text-primary));
+	border-bottom: solid 1px RGB(var(--color-primary-light));
 	margin-top: 10px;
+	padding: 20px 0;
 }
 .c-helper-item__content {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding-top: 20px;
+	gap: 30px;
 }
-.c-helper-item__title {
-	max-width: 270px;
+.c-helper-item__button {
+	min-width: 40px;
 }
 .c-helper-item__button-icon {
-	color: RGB(var(--color-primary));
+	color: RGB(var(--color-text-primary));
 }
 .c-helper-item__text {
 	margin: 20px 0;
 	font-size: 1.4rem;
+}
+@media ($on-mobile) {
+	.c-helper-item__content {
+		flex-wrap: wrap;
+	}
+	.c-helper-item__button {
+		width: 100%;
+	}
 }
 </style>
