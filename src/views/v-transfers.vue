@@ -26,6 +26,29 @@
 					</div>
 				</button>
 			</div>
+			<div class="v-transfer__wrapper" v-if="!isBancofar">
+				<button
+					data-testid="new-transfer"
+					@click="goto({ name: 'founds', params: { action: 'add' } })"
+					class="v-transfer__button"
+				>
+					<div class="v-transfer__card">
+						<div class="v-transfer__card-column-1">
+							<span class="v-transfer__icon --secondary">
+								<c-icon src="@icons/newTransfer" size="xl" />
+							</span>
+						</div>
+						<div class="v-transfer__card-column-2">
+							<h2 class="v-transfer__card-title text-m-medium">
+								{{ $t('TRANSFERS.ADD_FUNDS.TITLE') }}
+							</h2>
+							<p class="v-transfer__card-desc text-m-light">
+								{{ $t('TRANSFERS.ADD_FUNDS.DESC') }}
+							</p>
+						</div>
+					</div>
+				</button>
+			</div>
 
 			<div class="v-transfer__wrapper" v-if="!isBancofar">
 				<button
@@ -41,13 +64,10 @@
 						</div>
 						<div class="v-transfer__card-column-2">
 							<h2 class="v-transfer__card-title text-m-medium">
-								{{ $t('TRANSFERS.MY_TRANSFERS.TITLE') }}
+								{{ $t('TRANSFERS.MY_OPERATIONS.TITLE') }}
 							</h2>
 							<p class="v-transfer__card-desc text-m-light">
-								{{ $t('TRANSFERS.MY_TRANSFERS.DESC1') }}
-							</p>
-							<p class="v-transfer__card-desc text-m-light">
-								{{ $t('TRANSFERS.MY_TRANSFERS.DESC2') }}
+								{{ $t('TRANSFERS.MY_OPERATIONS.DESC') }}
 							</p>
 						</div>
 					</div>
@@ -77,30 +97,6 @@
 					</div>
 				</button>
 			</div>
-
-			<div class="v-transfer__wrapper" v-if="enableBizum && !isBancofar">
-				<button
-					data-testid="bizum-register"
-					@click="goto({ name: 'bizum' })"
-					class="v-transfer__button"
-				>
-					<div class="v-transfer__card">
-						<div class="v-transfer__card-column-1">
-							<span class="v-transfer__icon v-transfer__icon--bizum">
-								<c-icon src="@icons/bizum" />
-							</span>
-						</div>
-						<div class="v-transfer__card-column-2">
-							<h2 class="v-transfer__card-title text-m-medium">
-								{{ $t('TRANSFERS.BIZUM.TITLE') }}
-							</h2>
-							<p class="v-transfer__card-desc text-m-light">
-								{{ $t('TRANSFERS.BIZUM.DESC') }}
-							</p>
-						</div>
-					</div>
-				</button>
-			</div>
 		</div>
 	</l-page>
 </template>
@@ -108,7 +104,6 @@
 <script>
 import LPage from '@layouts/l-page';
 import CIcon from '@components/c-icon';
-import bizumModule from '@modules/bizum/m-bizum';
 
 import mq from '@utils/matchMedia';
 import { onDesktop } from '@theme';
@@ -117,8 +112,6 @@ import { mapState } from 'vuex';
 export default {
 	name: 'v-transfers',
 
-	modules: { bizum: bizumModule },
-
 	components: {
 		LPage,
 		CIcon,
@@ -126,10 +119,6 @@ export default {
 
 	beforeRouteEnter(to, from, next) {
 		next((vm) => vm.gotoHandler(to, from));
-	},
-
-	data() {
-		return { enableBizum: false };
 	},
 
 	computed: {
@@ -154,7 +143,7 @@ export default {
 		gotoHandler(to, from) {
 			const { name } = to;
 			const { isDesktop, isBancofar } = this;
-			const viewLinks = ['transfer', 'my-transfers'];
+			const viewLinks = ['transfer', 'my-transfers', 'founds'];
 
 			if (isDesktop && name === 'transfers' && !viewLinks.includes(from.name)) {
 				if (isBancofar) {
@@ -163,10 +152,6 @@ export default {
 				this.goto({ name: 'transfer', params: { action: 'new' } });
 			}
 		},
-	},
-
-	async created() {
-		this.enableBizum = await this.$store.dispatch('bizum/isEnabled');
 	},
 };
 </script>
@@ -227,9 +212,5 @@ export default {
 
 .v-transfer__card-desc {
 	margin-top: 10px;
-}
-
-.v-transfer__icon--bizum {
-	font-size: 1.5rem;
 }
 </style>
